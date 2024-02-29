@@ -6,7 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
     Rigidbody2D rb;
-    Vector2 moveDirection;
+    [HideInInspector]
+    public Vector2 moveDirection;
 
     private void Start()
     {
@@ -29,12 +30,10 @@ public class PlayerController : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         moveDirection = new Vector2(moveX, moveY);
-
     }
 
     private void Move()
     {
         rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-        //rb.position = moveDirection;
     }
 }
