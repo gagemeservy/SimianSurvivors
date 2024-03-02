@@ -13,7 +13,7 @@ public class CoconutController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        GameObject spawnedCoconut = Instantiate(prefab);
+        GameObject spawnedCoconut = Instantiate(weaponData.Prefab);
         spawnedCoconut.transform.position = transform.position; //this sets it to the player's position
         spawnedCoconut.GetComponent<CoconutBehavior>().DirectionChecker(playerMovement.moveDirection);
     }

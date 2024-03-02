@@ -6,20 +6,18 @@ using UnityEngine.UIElements;
 public class EnemyMovement : MonoBehaviour
 {
     Transform player;
-    public float movespeed;
-    private bool flip;
+    public EnemyScriptableObject enemyData;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<PlayerController>().transform;
-        flip = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, movespeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyData.MoveSpeed * Time.deltaTime);
         Vector3 oldScale = transform.localScale;
 
         if ((transform.position.x - player.transform.position.x) > 0 && (oldScale.x > 0))
