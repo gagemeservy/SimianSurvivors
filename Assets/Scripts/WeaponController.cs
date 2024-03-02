@@ -9,6 +9,8 @@ public class WeaponController : MonoBehaviour
     public float currentCooldown;
     
     protected PlayerController playerMovement;
+    protected Vector3 previousDirection = Vector3.one;
+    protected Vector3 newDirection;
 
     virtual protected void Start()
     {

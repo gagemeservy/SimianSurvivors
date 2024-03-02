@@ -36,9 +36,18 @@ public class ProjectileWeaponBehavior : MonoBehaviour
         Destroy(gameObject, destroyAfterSeconds);
     }
 
-    public void DirectionChecker(Vector3 givenDirection)
+    public Vector3 DirectionChecker(Vector3 givenDirection, Vector3 previousDirection)
     {
-        this.direction = givenDirection;
+        if (givenDirection != Vector3.zero)
+        {
+            this.direction = givenDirection;
+        }
+        else
+        {
+            this.direction = previousDirection;
+        }
+
+        return this.direction;
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D collidedWith)
@@ -48,6 +57,16 @@ public class ProjectileWeaponBehavior : MonoBehaviour
         {
             EnemyStats enemy = collidedWith.GetComponent<EnemyStats>();
             enemy.TakeDamage(currentDamage);
+            ReducePierce();
+        }
+    }
+
+    private void ReducePierce()
+    {
+        currentPierce--;
+        if (currentPierce <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
