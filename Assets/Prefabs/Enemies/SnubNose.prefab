@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3148740402037481167}
   - component: {fileID: 2560068576777474112}
   - component: {fileID: 4102222058642902990}
+  - component: {fileID: -8938445285476957708}
   m_Layer: 0
   m_Name: SnubNose
   m_TagString: Untagged
@@ -145,6 +146,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.43414885, y: 0.6817666}
   m_EdgeRadius: 0
+--- !u!114 &-8938445285476957708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457612397259887747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddedbd9cc021b5d4a819b4fd2d7af560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drops:
+  - name: YellowXPnut
+    itemPrefab: {fileID: 71473799619653679, guid: 3d5c4d9e3a86a6f499a616d4efcee2e3, type: 3}
+    dropRate: 80
+  - name: OrangeXPnut
+    itemPrefab: {fileID: 6260029731400315184, guid: f00b6fef0819e564e9612c67e8e809fd, type: 3}
+    dropRate: 10
+  - name: RedXPnut
+    itemPrefab: {fileID: 4188998568056715057, guid: 0b7a5259cfc16ea43848530f8dfb4a77, type: 3}
+    dropRate: 0.1
+  - name: Health
+    itemPrefab: {fileID: 6509846541490924993, guid: 0618eaea966979e43b355449d9dae702, type: 3}
+    dropRate: 0.1
 --- !u!1 &5275338203857299795
 GameObject:
   m_ObjectHideFlags: 0

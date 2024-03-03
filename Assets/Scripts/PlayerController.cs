@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
+    
     Rigidbody2D rb;
+    public CharacterScriptableObject characterData;
     [HideInInspector]
     public Vector2 moveDirection;
 
@@ -34,6 +35,6 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        rb.velocity = new Vector2(moveDirection.x * characterData.MoveSpeed, moveDirection.y * characterData.MoveSpeed);
     }
 }
