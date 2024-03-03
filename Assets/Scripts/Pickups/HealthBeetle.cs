@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthBeetle : MonoBehaviour, ICollectible
 {
-    public int healthToRestore;
+    public float healthToRestore;
 
     public void Collect()
     {

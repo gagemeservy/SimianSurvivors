@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
 
-    float currentHealth;
-    float currentRecovery;
-    float currentMoveSpeed;
-    float currentMight;
-    float currentProjectileSpeed;
+    public float currentHealth;
+    public float currentRecovery;
+    public float currentMoveSpeed;
+    public float currentAttackDamage;
+    public float currentAttackSpeed;
+    public float currentMaxHealth;
+
+    public GameObject announcementBubble;
+    public TMP_Text playerAnnouncements;
 
     [Header("Experience/Level")]
     public float experience = 0;
@@ -23,13 +28,20 @@ public class PlayerStats : MonoBehaviour
     float invincibilityTimer;
     bool isInvincible;
 
+    [Header("AnnounceDuration")]
+    public float announceDuration;
+    float announceTimer;
+
     private void Awake()
     {
+        announcementBubble.SetActive(false);   
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentMoveSpeed = characterData.MoveSpeed;
-        currentMight = characterData.Might;
-        currentProjectileSpeed = characterData.ProjectileSpeed;
+        currentAttackDamage = characterData.AttackDamage;
+        currentAttackSpeed = characterData.AttackSpeed;
+        currentMaxHealth = characterData.MaxHealth;
+
     }
 
     private void Update()
@@ -41,6 +53,15 @@ public class PlayerStats : MonoBehaviour
         else if (isInvincible) 
         { 
             isInvincible = false;
+        }
+
+        if (announceTimer > 0)
+        {
+            announceTimer -= Time.deltaTime;
+        }
+        else
+        {
+            announcementBubble.SetActive(false);
         }
     }
 
@@ -87,15 +108,58 @@ public class PlayerStats : MonoBehaviour
 
     public void RestoreHealth(float healthToRestore)
     {
-        if (currentHealth < characterData.MaxHealth)
+        Announce("Health Restored!");
+
+        if (currentHealth < currentMaxHealth)
         {
             currentHealth += healthToRestore;
 
-            if(currentHealth > characterData.MaxHealth)
+            if(currentHealth > currentMaxHealth)
             {
-                currentHealth = characterData.MaxHealth;
+                currentHealth = currentMaxHealth;
             }
         }
-        
+    }
+
+    public void IncreaseMaxHealth(float healthToIncrease)
+    {
+        Announce("Max Health Increased!");
+            
+        currentMaxHealth += healthToIncrease;
+    }
+
+    public void HealthSpeedIncrease(float speedToIncrease)
+    {
+        Announce("Health Recovery Speed Increased!");
+
+        currentRecovery += speedToIncrease;
+    }
+
+    public void IncreaseAttack(float attackIncrease)
+    {
+        Announce("Attack Power Increased!");
+
+        currentAttackDamage += attackIncrease;
+    }
+
+    public void IncreaseAttackSpeed(float attackSpeedIncrease)
+    {
+        Announce("Attack Speed Increased!");
+
+        currentAttackSpeed += attackSpeedIncrease;
+    }
+
+    public void IncreaseMoveSpeed(float speedIncrease)
+    {
+        Announce("Move Speed Increased!");
+
+        currentMoveSpeed += speedIncrease;
+    }
+
+    void Announce(string text)
+    {
+        announceTimer = announceDuration;
+        announcementBubble.SetActive(true);
+        this.playerAnnouncements.SetText(text);
     }
 }

@@ -23,12 +23,12 @@ public class CharacterScriptableObject : ScriptableObject
     public float MoveSpeed { get => moveSpeed; private set => moveSpeed = value; }
 
     [SerializeField]
-    float might;
-    public float Might { get => might; private set => might = value; }
+    float attackDamage;
+    public float AttackDamage { get => attackDamage; private set => attackDamage = value; }
 
     [SerializeField]
-    float projectileSpeed;
-    public float ProjectileSpeed { get => projectileSpeed; private set => projectileSpeed = value; }
+    float attackSpeed;
+    public float AttackSpeed { get => attackSpeed; private set => attackSpeed = value; }
 
 
 
