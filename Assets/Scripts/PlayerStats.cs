@@ -7,11 +7,17 @@ public class PlayerStats : MonoBehaviour
 {
     public CharacterScriptableObject characterData;
 
+    [HideInInspector]
     public float currentHealth;
+    [HideInInspector]
     public float currentRecovery;
+    [HideInInspector]
     public float currentMoveSpeed;
+    [HideInInspector]
     public float currentAttackDamage;
+    [HideInInspector]
     public float currentAttackSpeed;
+    [HideInInspector]
     public float currentMaxHealth;
 
     public GameObject announcementBubble;
