@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
@@ -13,17 +14,55 @@ public class EnemyStats : MonoBehaviour
     [HideInInspector]
     public float currentDamage;
 
+    public GameObject announcementBubble;
+    public TMP_Text playerAnnouncements;
+
+    [Header("AnnounceDuration")]
+    public float announceDuration;
+    float announceTimer;
+
+    [Header("FlashDuration")]
+    float flashDuration = .1f;
+    float flashTimer = 0;
+    private Color colorToFlash = Color.red;
+    private Color originalColor;
+    private SpriteRenderer sprite;
+
     private void Awake()
     {
+        sprite = GetComponent<SpriteRenderer>();
+        originalColor = sprite.color;
         currentMoveSpeed = enemyData.MoveSpeed;
         currentDamage = enemyData.Damage;
         currentHealth = enemyData.MaxHealth;
     }
 
+    private void Update()
+    {
+        /*if (announceTimer > 0)
+        {
+            announceTimer -= Time.deltaTime;
+        }
+        else
+        {
+            announcementBubble.SetActive(false);
+        }*/
+
+        if (flashTimer > 0)
+        {
+            flashTimer -= Time.deltaTime;
+        }
+        else
+        {
+            sprite.color = originalColor;
+        }
+    }
+
     public void TakeDamage(float damage)
     {
         //DISPLAY DAMAGE NUMBERS BEING TAKEN ABOUT THE ENEMY'S TRANSFORM.POSITION
-        //Also call function here to chance drop xp then make play true is trigger
+        //Announce(damage.ToString());
+        FlashDamage();
         currentHealth -= damage;
 
         if(currentHealth <= 0) 
@@ -44,5 +83,18 @@ public class EnemyStats : MonoBehaviour
             PlayerStats player = collision.gameObject.GetComponent<PlayerStats>();
             player.TakeDamage(currentDamage);
         }
+    }
+
+    void Announce(string text)
+    {
+        announceTimer = announceDuration;
+        announcementBubble.SetActive(true);
+        this.playerAnnouncements.SetText(text);
+    }
+
+    private void FlashDamage()
+    {
+        flashTimer = flashDuration;
+        sprite.color = colorToFlash;
     }
 }

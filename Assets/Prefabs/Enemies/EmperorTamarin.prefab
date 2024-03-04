@@ -146,7 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6075a75f4bc040c47adf2dc38d2e1c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 56bcf041ea205af43a8755315f2bc1f9, type: 2}
 --- !u!114 &6463328809409341756
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +159,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 56bcf041ea205af43a8755315f2bc1f9, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
+  announcementBubble: {fileID: 0}
+  playerAnnouncements: {fileID: 0}
+  announceDuration: 1
 --- !u!114 &-6817364407658107276
 MonoBehaviour:
   m_ObjectHideFlags: 0

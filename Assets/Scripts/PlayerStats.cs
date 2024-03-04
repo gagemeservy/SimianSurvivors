@@ -40,7 +40,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Awake()
     {
-        announcementBubble.SetActive(false);   
+        announcementBubble.SetActive(false);
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentMoveSpeed = characterData.MoveSpeed;
@@ -52,12 +52,12 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        if(invincibilityTimer > 0)
+        if (invincibilityTimer > 0)
         {
             invincibilityTimer -= Time.deltaTime;
         }
-        else if (isInvincible) 
-        { 
+        else if (isInvincible)
+        {
             isInvincible = false;
         }
 
@@ -69,6 +69,8 @@ public class PlayerStats : MonoBehaviour
         {
             announcementBubble.SetActive(false);
         }
+        
+        Recover();
     }
 
     public void IncreaseExperience(int amount)
@@ -80,7 +82,7 @@ public class PlayerStats : MonoBehaviour
 
     private void LevelUpChecker()
     {
-        if(experience >= experienceCap)
+        if (experience >= experienceCap)
         {
             //CALL THE FUNCTION TO LET THEM SELECT AN ITEM TO LEVEL DOWN
             level++;
@@ -91,7 +93,7 @@ public class PlayerStats : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if(!isInvincible)
+        if (!isInvincible)
         {
             currentHealth -= damage;
 
@@ -103,7 +105,7 @@ public class PlayerStats : MonoBehaviour
                 Kill();
             }
         }
-        
+
     }
 
     public void Kill()
@@ -120,10 +122,18 @@ public class PlayerStats : MonoBehaviour
         {
             currentHealth += healthToRestore;
 
-            if(currentHealth > currentMaxHealth)
+            if (currentHealth > currentMaxHealth)
             {
                 currentHealth = currentMaxHealth;
             }
+        }
+    }
+
+    void Recover()
+    {
+        if(currentHealth < currentMaxHealth)
+        {
+            currentHealth += currentRecovery * Time.deltaTime;
         }
     }
 
