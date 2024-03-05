@@ -27,6 +27,9 @@ public class EnemyStats : MonoBehaviour
     private Color colorToFlash = Color.red;
     private Color originalColor;
     private SpriteRenderer sprite;
+    float widthVariation;
+    Vector3 originalScale;
+    Vector3 newScale;
 
     private void Awake()
     {
@@ -35,6 +38,7 @@ public class EnemyStats : MonoBehaviour
         currentMoveSpeed = enemyData.MoveSpeed;
         currentDamage = enemyData.Damage;
         currentHealth = enemyData.MaxHealth;
+        //originalScale = sprite.transform.localScale;
     }
 
     private void Update()
@@ -56,6 +60,8 @@ public class EnemyStats : MonoBehaviour
         {
             sprite.color = originalColor;
         }
+        
+        //sprite.transform.localScale
     }
 
     public void TakeDamage(float damage)

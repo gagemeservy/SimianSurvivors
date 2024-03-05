@@ -14,6 +14,8 @@ public class UIController : MonoBehaviour
     public TMP_Text recoveryspeedText;
     public TMP_Text attackDamageText;
     public TMP_Text attackspeedText;
+    public TMP_Text levelText;
+    public TMP_Text XPText;
 
     private float timeElapsed;
     float minutes;
@@ -41,6 +43,10 @@ public class UIController : MonoBehaviour
         this.attackDamageText.SetText("Attack Multiplier: " + player.currentAttackDamage);
 
         this.attackspeedText.SetText("Attack Speed: " + player.currentAttackSpeed);
+
+        this.levelText.SetText("Level: " + player.level);
+
+        this.XPText.SetText("XPnuts: " + player.experience + "/" + player.experienceCap);
     }
 
     // Update is called once per frame
@@ -61,5 +67,9 @@ public class UIController : MonoBehaviour
         this.attackDamageText.SetText("Attack Multiplier: " + player.currentAttackDamage);
 
         this.attackspeedText.SetText("Attack Speed: " + player.currentAttackSpeed);
+
+        this.levelText.SetText("Level: " + player.level);
+
+        this.XPText.SetText("XPnuts: " + (int)player.experience + "/" + (int)player.experienceCap);
     }
 }

@@ -31,5 +31,7 @@ public class CharacterScriptableObject : ScriptableObject
     public float AttackSpeed { get => attackSpeed; private set => attackSpeed = value; }
 
 
-
+    [SerializeField]
+    float magnet;
+    public float Magnet { get => magnet; private set => magnet = value; }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthBeetle : MonoBehaviour, ICollectible
+public class HealthBeetle : Pickup, ICollectible
 {
     public float healthToRestore;
 
@@ -10,6 +10,5 @@ public class HealthBeetle : MonoBehaviour, ICollectible
     {
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.RestoreHealth(healthToRestore);
-        Destroy(gameObject);
     }
 }

@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5905726509867276833}
   - component: {fileID: 2697281828013625107}
   - component: {fileID: 6464898263900096347}
+  - component: {fileID: -2637439177506181392}
   m_Layer: 0
   m_Name: YellowXPnut
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,6 +146,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xpGranted: 100
+--- !u!50 &-2637439177506181392
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71473799619653679}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 8
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &7112637754919373424
 GameObject:
   m_ObjectHideFlags: 0

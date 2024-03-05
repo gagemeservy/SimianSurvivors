@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695e8855da077d34d8ec46caa9692d64, type: 3}
   m_Name: EmperorTamarinEnemy
   m_EditorClassIdentifier: 
-  damage: 1
-  maxHealth: 1
+  damage: 8
+  maxHealth: 5
   moveSpeed: 0.4

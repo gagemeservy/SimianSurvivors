@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class PlayerStats : MonoBehaviour
     public float currentAttackSpeed;
     [HideInInspector]
     public float currentMaxHealth;
+    [HideInInspector]
+    public float currentMagnet;
 
     public GameObject announcementBubble;
     public TMP_Text playerAnnouncements;
@@ -38,8 +41,17 @@ public class PlayerStats : MonoBehaviour
     public float announceDuration;
     float announceTimer;
 
+    [Header("FlashDuration")]
+    float flashDuration = .1f;
+    float flashTimer = 0;
+    private Color colorToFlash = Color.red;
+    private Color originalColor;
+    private SpriteRenderer sprite;
+
     private void Awake()
     {
+        sprite = GetComponent<SpriteRenderer>();
+        originalColor = sprite.color;
         announcementBubble.SetActive(false);
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
@@ -47,6 +59,7 @@ public class PlayerStats : MonoBehaviour
         currentAttackDamage = characterData.AttackDamage;
         currentAttackSpeed = characterData.AttackSpeed;
         currentMaxHealth = characterData.MaxHealth;
+        currentMagnet = characterData.Magnet;
 
     }
 
@@ -69,7 +82,16 @@ public class PlayerStats : MonoBehaviour
         {
             announcementBubble.SetActive(false);
         }
-        
+
+        if (flashTimer > 0)
+        {
+            flashTimer -= Time.deltaTime;
+        }
+        else
+        {
+            sprite.color = originalColor;
+        }
+
         Recover();
     }
 
@@ -82,7 +104,7 @@ public class PlayerStats : MonoBehaviour
 
     private void LevelUpChecker()
     {
-        if (experience >= experienceCap)
+        while (experience >= experienceCap)
         {
             //CALL THE FUNCTION TO LET THEM SELECT AN ITEM TO LEVEL DOWN
             level++;
@@ -95,6 +117,8 @@ public class PlayerStats : MonoBehaviour
     {
         if (!isInvincible)
         {
+            FlashDamage();
+
             currentHealth -= damage;
 
             invincibilityTimer = invincibilityDuration;
@@ -177,5 +201,11 @@ public class PlayerStats : MonoBehaviour
         announceTimer = announceDuration;
         announcementBubble.SetActive(true);
         this.playerAnnouncements.SetText(text);
+    }
+
+    private void FlashDamage()
+    {
+        flashTimer = flashDuration;
+        sprite.color = colorToFlash;
     }
 }

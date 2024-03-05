@@ -14,9 +14,6 @@ public class CoconutBehavior : ProjectileWeaponBehavior
     // Update is called once per frame
     void Update()
     { 
-        //coconut movement
-        //the direction doesn't have to come from the player's direction. 
-        //for most if not all weapons it actually won't
         transform.position += direction * weaponData.Speed * Time.deltaTime;
     }
 }

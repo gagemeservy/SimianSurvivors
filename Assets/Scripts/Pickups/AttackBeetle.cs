@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackBeetle : MonoBehaviour, ICollectible
+public class AttackBeetle : Pickup, ICollectible
 {
     public float attackIncrease;
 
@@ -10,6 +10,5 @@ public class AttackBeetle : MonoBehaviour, ICollectible
     {
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.IncreaseAttack(attackIncrease);
-        Destroy(gameObject);
     }
 }

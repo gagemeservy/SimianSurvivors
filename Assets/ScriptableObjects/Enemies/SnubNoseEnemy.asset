@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 695e8855da077d34d8ec46caa9692d64, type: 3}
   m_Name: SnubNoseEnemy
   m_EditorClassIdentifier: 
-  damage: 1.5
-  maxHealth: 2
+  damage: 10
+  maxHealth: 10
   moveSpeed: 0.6

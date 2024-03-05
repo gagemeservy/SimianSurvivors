@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed99d23c38704414a8ca1ee7550d843f, type: 3}
-  m_Name: CoconutWeapon
+  m_Name: QuicksandWeapon
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3721607343621230176, guid: 8f817e4a6661845418f2706bb1d97ac7, type: 3}
-  damage: 1
+  prefab: {fileID: 4837854565455472783, guid: b52c22cb7f7cdd149876d5f54e2662c0, type: 3}
+  damage: 0.01
   knockback: 2
-  speed: 10
+  speed: 0
   freezeDuration: 5
-  pierce: 10
-  numberOfAttacksToDo: 8
-  cooldownDuration: 2
-  currentForce: 1
+  pierce: 500
+  numberOfAttacksToDo: 4
+  cooldownDuration: 4
+  currentForce: 60

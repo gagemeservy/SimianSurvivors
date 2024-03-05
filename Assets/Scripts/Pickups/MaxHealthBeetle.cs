@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MaxHealthBeetle : MonoBehaviour, ICollectible
+public class MaxHealthBeetle : Pickup, ICollectible
 {
     public float healthToIncrease;
 
@@ -10,6 +10,5 @@ public class MaxHealthBeetle : MonoBehaviour, ICollectible
     {
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.IncreaseMaxHealth(healthToIncrease);
-        Destroy(gameObject);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthSpeedBeetle : MonoBehaviour, ICollectible
+public class HealthSpeedBeetle : Pickup, ICollectible
 {
     public float speedToIncrease;
 
@@ -10,6 +10,5 @@ public class HealthSpeedBeetle : MonoBehaviour, ICollectible
     {
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.HealthSpeedIncrease(speedToIncrease);
-        Destroy(gameObject);
     }
 }

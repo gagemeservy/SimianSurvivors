@@ -1,0 +1,67 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class CoconutController : WeaponController
+{
+    int currentNumberOfAttacksToDo = 8;
+
+    float[,] locationArray = new float[8, 2];
+    // Start is called before the first frame update
+    protected override void Start()
+    {
+        base.Start();
+        locationArray[0, 0] = 0;
+        locationArray[0, 1] = 1;
+
+        locationArray[1, 0] = 1;
+        locationArray[1, 1] = 0;
+
+        locationArray[2, 0] = 0;
+        locationArray[2, 1] = -1;
+
+        locationArray[3, 0] = -1;
+        locationArray[3, 1] = 0;
+
+        locationArray[4, 0] = -.71f;
+        locationArray[4, 1] = .71f;
+
+        locationArray[5, 0] = .71f;
+        locationArray[5, 1] = .71f;
+
+        locationArray[6, 0] = .71f;
+        locationArray[6, 1] = -.71f;
+
+        locationArray[7, 0] = -.71f;
+        locationArray[7, 1] = -.71f;
+    }
+
+    protected override void Attack()
+    {
+        base.Attack();
+        //NEED TO CHECK NUMBEROFATTACKSTODO and instantiate a new coconut for each one and spread out their directions a bit
+        //GameObject spawnedCoconut1 = SpawnAndAttack(0);
+
+        //Debug.Log("new direction is " + newDirection + "and player position is " + transform.position);
+
+        //CoconutBehavior coco = spawnedCoconut1.GetComponent<CoconutBehavior>();
+
+        //for (int i = 1; i < coco.currentNumberOfAttacksToDo; i++)
+        //{
+        //    SpawnAndAttack(i);
+        //}
+
+        for (int i = 0; i < currentNumberOfAttacksToDo; i++)
+        {
+            SpawnAndAttack(i);
+        }
+    }
+
+    GameObject SpawnAndAttack(int i)
+    {
+        GameObject spawnedCoconut = Instantiate(weaponData.Prefab);
+        spawnedCoconut.transform.position = transform.position;
+        spawnedCoconut.GetComponent<CoconutBehavior>().DirectionSetter(new Vector3(locationArray[i, 0], locationArray[i, 1], 0));
+        return spawnedCoconut;
+    }
+}

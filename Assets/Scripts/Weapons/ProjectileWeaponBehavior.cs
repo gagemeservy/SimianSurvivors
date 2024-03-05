@@ -15,8 +15,9 @@ public class ProjectileWeaponBehavior : MonoBehaviour
     protected float currentSpeed;
     protected float currentFreezeDuration;
     protected float currentPierce;
-    protected float currentNumberOfAttacksToDo;
+    public float currentNumberOfAttacksToDo;
     protected float currentCooldownDuration;
+    protected float currentForce;
 
     private void Awake()
     {
@@ -27,7 +28,9 @@ public class ProjectileWeaponBehavior : MonoBehaviour
         currentPierce = weaponData.Pierce;
         currentNumberOfAttacksToDo = weaponData.NumberOfAttacksToDo;
         currentCooldownDuration = weaponData.CooldownDuration;
-        
+        currentForce = weaponData.CurrentForce;
+
+
 }
 
     // Start is called before the first frame update
@@ -50,7 +53,12 @@ public class ProjectileWeaponBehavior : MonoBehaviour
         return this.direction;
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D collidedWith)
+    public void DirectionSetter(Vector3 givenDirection)
+    {
+        this.direction = givenDirection;
+    }
+
+    protected virtual void OnTriggerStay2D(Collider2D collidedWith)
     {
         //call take damage on the enemy
         if (collidedWith.CompareTag("Enemy"))

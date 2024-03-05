@@ -24,7 +24,14 @@ public class WeaponController : MonoBehaviour
     {
         currentCooldown -= Time.deltaTime;
 
-        if(currentCooldown < 0)
+        newDirection = playerMovement.moveDirection;
+
+        if (newDirection != Vector3.zero)
+        {
+            previousDirection = newDirection;
+        }
+
+        if (currentCooldown < 0)
         {
             Attack();
             currentCooldown = weaponData.CooldownDuration;
