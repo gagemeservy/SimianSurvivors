@@ -49,6 +49,7 @@ public class PlayerStats : MonoBehaviour
     private SpriteRenderer sprite;
 
 
+    [Header("WeaponsForPowerups")]
     public WeaponController weaponController1;
     public WeaponController weaponController2;
     public WeaponController weaponController3;
