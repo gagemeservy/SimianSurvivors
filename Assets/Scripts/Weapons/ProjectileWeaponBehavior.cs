@@ -10,7 +10,7 @@ public class ProjectileWeaponBehavior : MonoBehaviour
     public WeaponScriptableObject weaponData;
 
     //current weapon stats
-    protected float currentDamage;
+    public float currentDamage;
     protected float currentKnockback;
     protected float currentSpeed;
     protected float currentFreezeDuration;

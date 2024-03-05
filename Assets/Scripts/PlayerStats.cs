@@ -48,8 +48,15 @@ public class PlayerStats : MonoBehaviour
     private Color originalColor;
     private SpriteRenderer sprite;
 
+
+    public WeaponController weaponController1;
+    public WeaponController weaponController2;
+    public WeaponController weaponController3;
+    public WeaponController weaponController4;
+
     private void Awake()
     {
+        //weaponController = GetComponent<WeaponController>();
         sprite = GetComponent<SpriteRenderer>();
         originalColor = sprite.color;
         announcementBubble.SetActive(false);
@@ -177,16 +184,23 @@ public class PlayerStats : MonoBehaviour
 
     public void IncreaseAttack(float attackIncrease)
     {
-        Announce("Attack Power Increased!");
+        Announce("Attack Multiplier Increased!");
 
         currentAttackDamage += attackIncrease;
+        weaponController1.damageMultiplier = currentAttackDamage;
+        weaponController2.damageMultiplier = currentAttackDamage;
+        weaponController3.damageMultiplier = currentAttackDamage;
+        weaponController4.damageMultiplier = currentAttackDamage;
     }
 
     public void IncreaseAttackSpeed(float attackSpeedIncrease)
     {
         Announce("Attack Speed Increased!");
-
         currentAttackSpeed += attackSpeedIncrease;
+        weaponController1.CoolDown(attackSpeedIncrease);
+        weaponController2.CoolDown(attackSpeedIncrease);
+        weaponController3.CoolDown(attackSpeedIncrease);
+        weaponController4.CoolDown(attackSpeedIncrease);
     }
 
     public void IncreaseMoveSpeed(float speedIncrease)

@@ -57,11 +57,23 @@ public class CoconutController : WeaponController
         }
     }
 
+    protected override void lowerCoolDown(float amountToLowerBy)
+    {
+        Debug.Log("Coconut cooldown");
+        base.lowerCoolDown(amountToLowerBy);
+    }
+
     GameObject SpawnAndAttack(int i)
     {
         GameObject spawnedCoconut = Instantiate(weaponData.Prefab);
         spawnedCoconut.transform.position = transform.position;
         spawnedCoconut.GetComponent<CoconutBehavior>().DirectionSetter(new Vector3(locationArray[i, 0], locationArray[i, 1], 0));
+
+
+        //DO THIS ON EVERY WEAPON
+        spawnedCoconut.GetComponent<CoconutBehavior>().currentDamage = spawnedCoconut.GetComponent<CoconutBehavior>().currentDamage * damageMultiplier;
+
+
         return spawnedCoconut;
     }
 }

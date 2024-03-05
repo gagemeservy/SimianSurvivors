@@ -7,7 +7,9 @@ public class WeaponController : MonoBehaviour
     [Header("Weapon Stats")]
     public WeaponScriptableObject weaponData;
     public float currentCooldown;
-    
+    private float maxCooldown;
+    public float damageMultiplier = 1;
+
     protected PlayerController playerMovement;
     protected Vector3 previousDirection = Vector3.one;
     protected Vector3 newDirection;
@@ -15,6 +17,7 @@ public class WeaponController : MonoBehaviour
     virtual protected void Start()
     {
         playerMovement = FindObjectOfType<PlayerController>();
+        maxCooldown = weaponData.CooldownDuration;
         //currentCooldown = weaponData.cooldownDuration; //this instantly restarts the cooldown
         currentCooldown = -1;
     }
@@ -34,7 +37,22 @@ public class WeaponController : MonoBehaviour
         if (currentCooldown < 0)
         {
             Attack();
-            currentCooldown = weaponData.CooldownDuration;
+            currentCooldown = maxCooldown;
+        }
+    }
+
+    public void CoolDown(float amountToLowerBy)
+    {
+        Debug.Log("in COOL DOWN");
+        lowerCoolDown(amountToLowerBy);
+    }
+
+    virtual protected void lowerCoolDown(float amountToLowerBy)
+    {
+        Debug.Log("in LOWER COOL DOWN");
+        if (maxCooldown > (0 + amountToLowerBy))
+        {
+            maxCooldown -= amountToLowerBy;
         }
     }
 

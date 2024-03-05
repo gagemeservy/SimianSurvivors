@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CoconutWeapon
   m_EditorClassIdentifier: 
   prefab: {fileID: 3721607343621230176, guid: 8f817e4a6661845418f2706bb1d97ac7, type: 3}
-  damage: 1
+  damage: 8
   knockback: 2
   speed: 10
   freezeDuration: 5
@@ -21,3 +21,5 @@ MonoBehaviour:
   numberOfAttacksToDo: 8
   cooldownDuration: 2
   currentForce: 1
+  level: 0
+  nextLevelPrefab: {fileID: 0}

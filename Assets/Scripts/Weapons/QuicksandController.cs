@@ -54,6 +54,9 @@ public class QuicksandController : WeaponController
         spawnPosition.y += locationArray[i, 1];
 
         spawnedQuicksand.transform.position = spawnPosition; //this sets it based on the player's position
+
+        spawnedQuicksand.GetComponent<QuicksandBehavior>().currentDamage = spawnedQuicksand.GetComponent<QuicksandBehavior>().currentDamage * damageMultiplier;
+
         return spawnedQuicksand;
     }
 }
