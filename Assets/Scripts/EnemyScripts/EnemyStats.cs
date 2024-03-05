@@ -31,6 +31,9 @@ public class EnemyStats : MonoBehaviour
     Vector3 originalScale;
     Vector3 newScale;
 
+    public float despawnDistance = 20f;
+    Transform player;
+
     private void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -39,6 +42,11 @@ public class EnemyStats : MonoBehaviour
         currentDamage = enemyData.Damage;
         currentHealth = enemyData.MaxHealth;
         //originalScale = sprite.transform.localScale;
+    }
+
+    private void Start()
+    {
+        player = FindObjectOfType<PlayerStats>().transform;
     }
 
     private void Update()
@@ -52,6 +60,12 @@ public class EnemyStats : MonoBehaviour
             announcementBubble.SetActive(false);
         }*/
 
+        if (Vector2.Distance(transform.position, player.position) >= despawnDistance)
+        {
+            ReturnEnemy();
+        }
+
+
         if (flashTimer > 0)
         {
             flashTimer -= Time.deltaTime;
@@ -62,6 +76,12 @@ public class EnemyStats : MonoBehaviour
         }
         
         //sprite.transform.localScale
+    }
+
+    private void ReturnEnemy()
+    {
+        EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        transform.position = player.position + es.relativeSpawnPoints[Random.Range(0, es.relativeSpawnPoints.Count)].position;
     }
 
     public void TakeDamage(float damage)
@@ -102,5 +122,11 @@ public class EnemyStats : MonoBehaviour
     {
         flashTimer = flashDuration;
         sprite.color = colorToFlash;
+    }
+
+    private void OnDestroy()
+    {
+        EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        es.OnEnemyKilled();
     }
 }

@@ -43,13 +43,13 @@ public class WeaponController : MonoBehaviour
 
     public void CoolDown(float amountToLowerBy)
     {
-        Debug.Log("in COOL DOWN");
+        //Debug.Log("in COOL DOWN");
         lowerCoolDown(amountToLowerBy);
     }
 
     virtual protected void lowerCoolDown(float amountToLowerBy)
     {
-        Debug.Log("in LOWER COOL DOWN");
+        //Debug.Log("in LOWER COOL DOWN");
         if (maxCooldown > (0 + amountToLowerBy))
         {
             maxCooldown -= amountToLowerBy;
