@@ -44,5 +44,13 @@ public class WeaponScriptableObject : ScriptableObject
     GameObject nextLevelPrefab;
     public GameObject NextLevelPrefab { get => nextLevelPrefab; private set => nextLevelPrefab = value; }
 
+    [Header("Spawn Points")]
+    [SerializeField]
+    List<Transform> relativeSpawnPoints;
+    public List<Transform> RelativeSpawnPoints { get => relativeSpawnPoints; private set => relativeSpawnPoints = value; }
+
+    [SerializeField]
+    string description;
+    public string Description { get => description; private set => description = value; }
 
 }

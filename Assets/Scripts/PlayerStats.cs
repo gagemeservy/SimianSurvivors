@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -32,6 +33,7 @@ public class PlayerStats : MonoBehaviour
     public float experienceCap = 100;
     public float experienceCapIncrease;
 
+
     [Header("I-Frames")]
     public float invincibilityDuration;
     float invincibilityTimer;
@@ -49,14 +51,22 @@ public class PlayerStats : MonoBehaviour
     private SpriteRenderer sprite;
 
 
-    [Header("WeaponsForPowerups")]
+    [Header("InventoryWeaponsForPowerups")]
     public WeaponController weaponController1;
     public WeaponController weaponController2;
     public WeaponController weaponController3;
     public WeaponController weaponController4;
 
+    InventoryManager inventory;
+    public int weaponIndex;
+
+    public List<GameObject> possibleWeapons = new List<GameObject>(4);
+    public GameObject secondWeaponTest;
+
     private void Awake()
     {
+        inventory = GetComponent<InventoryManager>();
+        //weaponIndex = 0;
         //weaponController = GetComponent<WeaponController>();
         sprite = GetComponent<SpriteRenderer>();
         originalColor = sprite.color;
@@ -69,6 +79,10 @@ public class PlayerStats : MonoBehaviour
         currentMaxHealth = characterData.MaxHealth;
         currentMagnet = characterData.Magnet;
 
+        //If anything, I can spawn them with random weapons
+
+        SpawnWeapon(possibleWeapons[0]);
+        SpawnWeapon(secondWeaponTest);
     }
 
     private void Update()
@@ -222,5 +236,24 @@ public class PlayerStats : MonoBehaviour
     {
         flashTimer = flashDuration;
         sprite.color = colorToFlash;
+    }
+
+    public void SpawnWeapon(GameObject weapon)
+    {
+        //Debug.Log("In weapon spawner");
+
+        if(weaponIndex >= inventory.weaponSlots.Count - 1)
+        {
+            Debug.LogError("Inventory slots are full");
+            return;
+        }
+
+        //Debug.Log("Spawning weapon");
+        GameObject spawnedWeapon = Instantiate(weapon, transform.position, Quaternion.identity);
+        //Debug.Log("Spawned " + spawnedWeapon.name);
+        spawnedWeapon.transform.SetParent(transform);
+        inventory.AddWeapon(weaponIndex, spawnedWeapon.GetComponent<WeaponController>());
+
+        weaponIndex++;
     }
 }

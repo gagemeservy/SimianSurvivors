@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed99d23c38704414a8ca1ee7550d843f, type: 3}
+  m_Name: SkeletonWeapon7
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6434255417989740506, guid: 22899605c1066a14e8efce61e0e9c9bd, type: 3}
+  damage: 8
+  knockback: 2
+  speed: 1
+  freezeDuration: 5
+  pierce: 10
+  numberOfAttacksToDo: 8
+  cooldownDuration: 5
+  currentForce: 1
+  level: 7
+  nextLevelPrefab: {fileID: 8830111028188245453, guid: e8aeb1c08e8c7174ba259d4a4129a678, type: 3}
+  relativeSpawnPoints:
+  - {fileID: 7779971353862246800, guid: 1239655879728e3449b03ef7e00332ef, type: 3}
+  - {fileID: 3915591032748644296, guid: 01c0b967c99590b4495d4ceb7b0d51bf, type: 3}
+  - {fileID: 7405382620331020231, guid: c6bab85f8aa63c44c911eadf4d4803d9, type: 3}
+  - {fileID: 7624990436742990880, guid: 68460ea1425dd6040bbc917a3059a46a, type: 3}
+  - {fileID: 6547722053803537037, guid: 46eb4308f63e6b0458ce2387fa8d1577, type: 3}
+  - {fileID: 3081017288366704824, guid: db1daa848f6789646bea37cf5da758a9, type: 3}
+  - {fileID: 517941936136783449, guid: e20a87c848ea51b4fb86fd5669256c60, type: 3}
+  - {fileID: 6009482858910208855, guid: 1217f70224c46c34abb9c2983f161796, type: 3}
+  description: -1 projectile

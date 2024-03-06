@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed99d23c38704414a8ca1ee7550d843f, type: 3}
+  m_Name: QuicksandWeapon7
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 4837854565455472783, guid: d19d5a8d6ff9c294e9114943c9238a5e, type: 3}
+  damage: 1
+  knockback: 2
+  speed: 0
+  freezeDuration: 5
+  pierce: 450
+  numberOfAttacksToDo: 4
+  cooldownDuration: 4
+  currentForce: 60
+  level: 7
+  nextLevelPrefab: {fileID: 9055042534263378847, guid: 60a85fdcd6e30e742ac9627ea59459b2, type: 3}
+  relativeSpawnPoints: []
+  description: -10% pierce

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed99d23c38704414a8ca1ee7550d843f, type: 3}
+  m_Name: VineWeapon1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 7980028812558065742, guid: 01fcbf955a65d4f45ab2fe635cc78619, type: 3}
+  damage: 7.2
+  knockback: 2
+  speed: 1
+  freezeDuration: 5
+  pierce: 40
+  numberOfAttacksToDo: 5
+  cooldownDuration: 1.21
+  currentForce: 1
+  level: 1
+  nextLevelPrefab: {fileID: 0}
+  relativeSpawnPoints:
+  - {fileID: 920561416466593517, guid: 94f5f1ba3f2a24543a67408a78347d96, type: 3}
+  - {fileID: 5807268601960470145, guid: 59ec284253d61ad418328b622a3b86f2, type: 3}
+  - {fileID: 2604194076648927238, guid: 5b3e2cd95c7189342ab6f1053f57192a, type: 3}
+  - {fileID: 7321487737807095688, guid: b38807f3499f4c34a9ec868e5fc75510, type: 3}
+  - {fileID: 7312851779398084828, guid: e485402cba6780048a2b8181afa8fcd5, type: 3}
+  description: +10% cooldown

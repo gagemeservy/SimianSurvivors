@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed99d23c38704414a8ca1ee7550d843f, type: 3}
+  m_Name: CoconutWeapon3
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3721607343621230176, guid: 9dbff0f3f154b1348a457b29aba17db1, type: 3}
+  damage: 7.2
+  knockback: 2
+  speed: 10
+  freezeDuration: 5
+  pierce: 9
+  numberOfAttacksToDo: 6
+  cooldownDuration: 2.2
+  currentForce: 1
+  level: 3
+  nextLevelPrefab: {fileID: 2106162409706381382, guid: 4dd67d29abab00249b5592cbb131777b, type: 3}
+  relativeSpawnPoints: []
+  description: -1 projectile

@@ -165,7 +165,7 @@ MonoBehaviour:
     dropRate: 80
   - name: OrangeXPnut
     itemPrefab: {fileID: 6260029731400315184, guid: f00b6fef0819e564e9612c67e8e809fd, type: 3}
-    dropRate: 0.05
+    dropRate: 0.1
   - name: RedXPnut
     itemPrefab: {fileID: 4188998568056715057, guid: 0b7a5259cfc16ea43848530f8dfb4a77, type: 3}
     dropRate: 0.01

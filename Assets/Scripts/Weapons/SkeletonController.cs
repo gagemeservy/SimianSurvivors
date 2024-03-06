@@ -7,7 +7,7 @@ public class SkeletonController : WeaponController
 {
     [Header("Spawn Points")]
     public List<Transform> relativeSpawnPoints;
-    int currentNumberOfAttacksToDo = 8;
+    int currentNumberOfAttacksToDo = 9;
 
     Transform player;
 
@@ -17,6 +17,7 @@ public class SkeletonController : WeaponController
         base.Start();
         player = FindObjectOfType<PlayerStats>().transform;
         currentNumberOfAttacksToDo = weaponData.NumberOfAttacksToDo;
+        relativeSpawnPoints = weaponData.RelativeSpawnPoints;
     }
 
     protected override void Attack()

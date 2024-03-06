@@ -17,6 +17,7 @@ public class VineController : WeaponController
         base.Start();
         player = FindObjectOfType<PlayerStats>().transform;
         currentNumberOfAttacksToDo = weaponData.NumberOfAttacksToDo;
+        relativeSpawnPoints = weaponData.RelativeSpawnPoints;
     }
 
     protected override void Attack()
