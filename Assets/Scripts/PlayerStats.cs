@@ -15,10 +15,8 @@ public class PlayerStats : MonoBehaviour
     public float currentRecovery;
     [HideInInspector]
     public float currentMoveSpeed;
-    [HideInInspector]
-    public float currentAttackDamage;
-    [HideInInspector]
-    public float currentAttackSpeed;
+    public float currentAttackDamage = 1;
+    public float currentAttackSpeed = 0;
     [HideInInspector]
     public float currentMaxHealth;
     [HideInInspector]
@@ -51,11 +49,11 @@ public class PlayerStats : MonoBehaviour
     private SpriteRenderer sprite;
 
 
-    [Header("InventoryWeaponsForPowerups")]
+    /*[Header("InventoryWeaponsForPowerups")]
     public WeaponController weaponController1;
     public WeaponController weaponController2;
     public WeaponController weaponController3;
-    public WeaponController weaponController4;
+    public WeaponController weaponController4;*/
 
     InventoryManager inventory;
     public int weaponIndex;
@@ -74,8 +72,10 @@ public class PlayerStats : MonoBehaviour
         currentHealth = characterData.MaxHealth;
         currentRecovery = characterData.Recovery;
         currentMoveSpeed = characterData.MoveSpeed;
-        currentAttackDamage = characterData.AttackDamage;
-        currentAttackSpeed = characterData.AttackSpeed;
+        //currentAttackDamage = characterData.AttackDamage;
+        //currentAttackSpeed = characterData.AttackSpeed;
+        currentAttackDamage = 1;
+        currentAttackSpeed = 0;
         currentMaxHealth = characterData.MaxHealth;
         currentMagnet = characterData.Magnet;
 
@@ -200,22 +200,15 @@ public class PlayerStats : MonoBehaviour
     public void IncreaseAttack(float attackIncrease)
     {
         Announce("Attack Multiplier Increased!");
-
+        Debug.Log("Increasing attack by " + attackIncrease);
         currentAttackDamage += attackIncrease;
-        weaponController1.damageMultiplier = currentAttackDamage;
-        weaponController2.damageMultiplier = currentAttackDamage;
-        weaponController3.damageMultiplier = currentAttackDamage;
-        weaponController4.damageMultiplier = currentAttackDamage;
+        Debug.Log("Attack is now " + currentAttackDamage);
     }
 
     public void IncreaseAttackSpeed(float attackSpeedIncrease)
     {
         Announce("Attack Speed Increased!");
         currentAttackSpeed += attackSpeedIncrease;
-        weaponController1.CoolDown(attackSpeedIncrease);
-        weaponController2.CoolDown(attackSpeedIncrease);
-        weaponController3.CoolDown(attackSpeedIncrease);
-        weaponController4.CoolDown(attackSpeedIncrease);
     }
 
     public void IncreaseMoveSpeed(float speedIncrease)

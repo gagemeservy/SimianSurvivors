@@ -8,16 +8,27 @@ public class WeaponController : MonoBehaviour
     public WeaponScriptableObject weaponData;
     public float currentCooldown;
     private float maxCooldown;
+
+    public float coolDownReductionValue;
     public float damageMultiplier = 1;
 
     protected PlayerController playerMovement;
     protected Vector3 previousDirection = Vector3.one;
     protected Vector3 newDirection;
 
+    protected PlayerStats playerStats;
+
     virtual protected void Start()
     {
         playerMovement = FindObjectOfType<PlayerController>();
+        playerStats = FindObjectOfType<PlayerStats>();
+
         maxCooldown = weaponData.CooldownDuration;
+
+        coolDownReductionValue = playerStats.currentAttackSpeed;
+        damageMultiplier = playerStats.currentAttackDamage;
+
+        lowerCoolDown(coolDownReductionValue);
         //currentCooldown = weaponData.cooldownDuration; //this instantly restarts the cooldown
         currentCooldown = -1;
     }
@@ -25,6 +36,16 @@ public class WeaponController : MonoBehaviour
 
     virtual protected void Update()
     {
+        if(playerStats.currentAttackSpeed != coolDownReductionValue)
+        {
+            maxCooldown += coolDownReductionValue;
+
+            coolDownReductionValue = playerStats.currentAttackSpeed;
+            lowerCoolDown(coolDownReductionValue);
+        }
+
+        damageMultiplier = playerStats.currentAttackDamage;
+
         currentCooldown -= Time.deltaTime;
 
         newDirection = playerMovement.moveDirection;
@@ -39,6 +60,11 @@ public class WeaponController : MonoBehaviour
             Attack();
             currentCooldown = maxCooldown;
         }
+    }
+
+    public float GetDamageAfterMultiplier(float baseDamage)
+    {
+        return baseDamage * damageMultiplier;
     }
 
     public void CoolDown(float amountToLowerBy)

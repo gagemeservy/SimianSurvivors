@@ -19,6 +19,13 @@ public class InventoryManager : MonoBehaviour
         if(weaponSlots.Count > slotIndex)
         {
             WeaponController weapon = weaponSlots[slotIndex];
+
+            if (!weapon.weaponData.NextLevelPrefab)
+            {
+                Debug.Log("No next level");
+                return;
+            }
+
             GameObject upgradeWeapon = Instantiate(weapon.weaponData.NextLevelPrefab, transform.position, Quaternion.identity);
             upgradeWeapon.transform.SetParent(transform);
 

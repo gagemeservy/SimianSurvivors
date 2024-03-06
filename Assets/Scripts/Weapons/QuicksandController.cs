@@ -30,17 +30,6 @@ public class QuicksandController : WeaponController
     {
         base.Attack();
 
-        //GameObject spawnedQuicksand1 = SpawnAndAttack(0);
-
-        //NEED TO CHECK NUMBEROFATTACKSTODO and instantiate a new coconut for each one and spread out their directions a bit
-
-        //QuicksandBehavior qs = spawnedQuicksand1.GetComponent<QuicksandBehavior>();
-
-        //for(int i = 1; i < qs.currentNumberOfAttacksToDo; i++)
-        //{
-        //    SpawnAndAttack(i);
-        //}
-
         for (int i = 0; i < currentNumberOfAttacksToDo; i++)
         {
             SpawnAndAttack(i);
@@ -49,6 +38,7 @@ public class QuicksandController : WeaponController
 
     GameObject SpawnAndAttack(int i)
     {
+        
         GameObject spawnedQuicksand = Instantiate(weaponData.Prefab);
         Vector3 spawnPosition = transform.position;
         spawnPosition.x += locationArray[i, 0];
@@ -56,7 +46,7 @@ public class QuicksandController : WeaponController
 
         spawnedQuicksand.transform.position = spawnPosition; //this sets it based on the player's position
 
-        spawnedQuicksand.GetComponent<QuicksandBehavior>().currentDamage = spawnedQuicksand.GetComponent<QuicksandBehavior>().currentDamage * damageMultiplier;
+        spawnedQuicksand.GetComponent<QuicksandBehavior>().currentDamage = GetDamageAfterMultiplier(spawnedQuicksand.GetComponent<QuicksandBehavior>().currentDamage);
 
         return spawnedQuicksand;
     }

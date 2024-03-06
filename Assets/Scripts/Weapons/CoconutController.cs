@@ -40,17 +40,6 @@ public class CoconutController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        //NEED TO CHECK NUMBEROFATTACKSTODO and instantiate a new coconut for each one and spread out their directions a bit
-        //GameObject spawnedCoconut1 = SpawnAndAttack(0);
-
-        //Debug.Log("new direction is " + newDirection + "and player position is " + transform.position);
-
-        //CoconutBehavior coco = spawnedCoconut1.GetComponent<CoconutBehavior>();
-
-        //for (int i = 1; i < coco.currentNumberOfAttacksToDo; i++)
-        //{
-        //    SpawnAndAttack(i);
-        //}
 
         for (int i = 0; i < currentNumberOfAttacksToDo; i++)
         {
@@ -72,7 +61,7 @@ public class CoconutController : WeaponController
 
 
         //DO THIS ON EVERY WEAPON
-        spawnedCoconut.GetComponent<CoconutBehavior>().currentDamage = spawnedCoconut.GetComponent<CoconutBehavior>().currentDamage * damageMultiplier;
+        spawnedCoconut.GetComponent<CoconutBehavior>().currentDamage = GetDamageAfterMultiplier(spawnedCoconut.GetComponent<CoconutBehavior>().currentDamage);
 
 
         return spawnedCoconut;
