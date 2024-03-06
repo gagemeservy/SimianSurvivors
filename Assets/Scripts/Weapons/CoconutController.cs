@@ -34,6 +34,7 @@ public class CoconutController : WeaponController
 
         locationArray[7, 0] = -.71f;
         locationArray[7, 1] = -.71f;
+        currentNumberOfAttacksToDo = weaponData.NumberOfAttacksToDo;
     }
 
     protected override void Attack()

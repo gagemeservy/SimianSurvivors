@@ -16,6 +16,7 @@ public class SkeletonController : WeaponController
     {
         base.Start();
         player = FindObjectOfType<PlayerStats>().transform;
+        currentNumberOfAttacksToDo = weaponData.NumberOfAttacksToDo;
     }
 
     protected override void Attack()

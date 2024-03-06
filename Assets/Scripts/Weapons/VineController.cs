@@ -7,7 +7,7 @@ public class VineController : WeaponController
 {
     [Header("Spawn Points")]
     public List<Transform> relativeSpawnPoints;
-    int currentNumberOfAttacksToDo = 6;
+    int currentNumberOfAttacksToDo = 7;
 
     Transform player;
 
@@ -16,6 +16,7 @@ public class VineController : WeaponController
     {
         base.Start();
         player = FindObjectOfType<PlayerStats>().transform;
+        currentNumberOfAttacksToDo = weaponData.NumberOfAttacksToDo;
     }
 
     protected override void Attack()
@@ -36,15 +37,20 @@ public class VineController : WeaponController
     GameObject SpawnAndAttack(int i)
     {
         GameObject spawnedVine;
+        Vector3 directionOffset;
 
         if (i < relativeSpawnPoints.Count)
         {
+            directionOffset = relativeSpawnPoints[i].position;
             spawnedVine = Instantiate(weaponData.Prefab, player.position + relativeSpawnPoints[i].position, Quaternion.identity);
         }
         else
         {
-            spawnedVine = Instantiate(weaponData.Prefab, player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
+            directionOffset = relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position;
+            spawnedVine = Instantiate(weaponData.Prefab, player.position + directionOffset, Quaternion.identity);
         }
+
+        spawnedVine.GetComponent<VineBehavior>().DirectionSetter(directionOffset);
 
         //spawnedVine.GetComponent<SkeletonBehavior>().DirectionSetter(new Vector3(0, -1, 0));
 

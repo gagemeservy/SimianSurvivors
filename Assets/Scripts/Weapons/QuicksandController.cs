@@ -23,6 +23,7 @@ public class QuicksandController : WeaponController
         locationArray[2, 1] = -spawnRadius2;
         locationArray[3, 0] = -spawnRadius1;
         locationArray[3, 1] = -spawnRadius2;
+        currentNumberOfAttacksToDo = weaponData.NumberOfAttacksToDo;
     }
 
     protected override void Attack()
