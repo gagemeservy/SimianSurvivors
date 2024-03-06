@@ -126,7 +126,16 @@ public class EnemyStats : MonoBehaviour
 
     private void OnDestroy()
     {
-        EnemySpawner es = FindObjectOfType<EnemySpawner>();
-        es.OnEnemyKilled();
+        //Debug.Log(enemyData.ToString());
+        //replace false with statement to check that enemyData.ToString() == "SupremeSimian" something make sure you get the right title
+        if (false)
+        {
+            //if supreme simian, end the game. Probably have a function on PlayerStats or something and call it
+        }
+        else
+        {
+            EnemySpawner es = FindObjectOfType<EnemySpawner>();
+            es.OnEnemyKilled();
+        }
     }
 }

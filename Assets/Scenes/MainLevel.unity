@@ -4541,7 +4541,9 @@ MonoBehaviour:
   weaponIndex: 0
   possibleWeapons:
   - {fileID: 8830111028188245453, guid: bd446e4c43d0f0a469938aa6665044d8, type: 3}
-  secondWeaponTest: {fileID: 2106162409706381382, guid: 34674e2ba6874d146a2b8c31dcc9e6db, type: 3}
+  - {fileID: 2106162409706381382, guid: 34674e2ba6874d146a2b8c31dcc9e6db, type: 3}
+  - {fileID: 9055042534263378847, guid: 9c338c5309c792646a93b7825634a5d1, type: 3}
+  - {fileID: 7785816997681255911, guid: cb5ea9c8f9ff12649ba9ef5a7fb38527, type: 3}
 --- !u!114 &819140689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4579,8 +4581,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  weaponLevels: 0000000000000000000000000000000000000000000000000000000000000000
+  weaponLevels: 000000000000000000000000
+  enemySpawner: {fileID: 285893581}
 --- !u!1001 &842446090
 PrefabInstance:
   m_ObjectHideFlags: 0

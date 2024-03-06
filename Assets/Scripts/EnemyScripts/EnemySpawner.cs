@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static EnemySpawner;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -117,6 +118,15 @@ public class EnemySpawner : MonoBehaviour
         {
             maxEnemiesReach = false;
         }
+    }
+
+    public void SpawnSupremeSimian()
+    {
+        Debug.Log("Spawning Supreme Simian");
+        //pass in monkey Supreme Simian prefab
+        //how to end game once he dies
+        //dilemma
+        //Instantiate(enemyGroup.enemyPrefab, player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
     }
 
     public void OnEnemyKilled()

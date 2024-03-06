@@ -1,7 +1,10 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using TMPro;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.U2D;
 
@@ -59,7 +62,6 @@ public class PlayerStats : MonoBehaviour
     public int weaponIndex;
 
     public List<GameObject> possibleWeapons = new List<GameObject>(4);
-    public GameObject secondWeaponTest;
 
     private void Awake()
     {
@@ -79,10 +81,41 @@ public class PlayerStats : MonoBehaviour
         currentMaxHealth = characterData.MaxHealth;
         currentMagnet = characterData.Magnet;
 
-        //If anything, I can spawn them with random weapons
+        
 
-        SpawnWeapon(possibleWeapons[0]);
-        SpawnWeapon(secondWeaponTest);
+        //This function can be replicated with other numbers, of course it could be dynamic and I could pass in a number but I don't wanna waste time.
+        Spawn3RandomWeapons();
+    }
+
+    private void Spawn3RandomWeapons()
+    {
+        if(possibleWeapons.Count > 0)
+        {//1
+            int randomSlot = UnityEngine.Random.Range(0, possibleWeapons.Count);
+
+            SpawnWeapon(possibleWeapons[randomSlot]);
+
+            possibleWeapons.RemoveAt(randomSlot);
+
+            if (possibleWeapons.Count > 0)
+            {//2
+                randomSlot = UnityEngine.Random.Range(0, possibleWeapons.Count);
+
+                SpawnWeapon(possibleWeapons[randomSlot]);
+
+                possibleWeapons.RemoveAt(randomSlot);
+
+                if (possibleWeapons.Count > 0)
+                {//3
+                    //Debug.Log("spawning third weapon");
+                    randomSlot = UnityEngine.Random.Range(0, possibleWeapons.Count);
+
+                    SpawnWeapon(possibleWeapons[randomSlot]);
+
+                    possibleWeapons.RemoveAt(randomSlot);
+                }
+            }
+        }
     }
 
     private void Update()
@@ -200,9 +233,9 @@ public class PlayerStats : MonoBehaviour
     public void IncreaseAttack(float attackIncrease)
     {
         Announce("Attack Multiplier Increased!");
-        Debug.Log("Increasing attack by " + attackIncrease);
+        //Debug.Log("Increasing attack by " + attackIncrease);
         currentAttackDamage += attackIncrease;
-        Debug.Log("Attack is now " + currentAttackDamage);
+        //Debug.Log("Attack is now " + currentAttackDamage);
     }
 
     public void IncreaseAttackSpeed(float attackSpeedIncrease)
@@ -235,7 +268,7 @@ public class PlayerStats : MonoBehaviour
     {
         //Debug.Log("In weapon spawner");
 
-        if(weaponIndex >= inventory.weaponSlots.Count - 1)
+        if(weaponIndex >= inventory.weaponSlots.Count)
         {
             Debug.LogError("Inventory slots are full");
             return;
