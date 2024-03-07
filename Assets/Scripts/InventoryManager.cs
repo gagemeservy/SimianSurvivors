@@ -9,6 +9,8 @@ public class InventoryManager : MonoBehaviour
 
     public EnemySpawner enemySpawner;
 
+    private bool SupremeSimianSpawned = false;
+
     private void Awake()
     {
         enemySpawner.GetComponent<EnemySpawner>();
@@ -50,17 +52,21 @@ public class InventoryManager : MonoBehaviour
 
     void CheckForFinalLevels()
     {
-        for(int i = 0; i < weaponLevels.Length; i++)
+        if (!SupremeSimianSpawned)
         {
-            //Debug.Log("weapon at " + i + " is level " + weaponLevels[i]);
-            if (weaponLevels[i] != 1)
+            for (int i = 0; i < weaponLevels.Length; i++)
             {
-                return;
+                //Debug.Log("weapon at " + i + " is level " + weaponLevels[i]);
+                if (weaponLevels[i] != 1)
+                {
+                    return;
+                }
             }
-        }
 
-        //call big monke Supreme Simian
-        //Debug.Log("Calling supreme simian from inventory manager");
-        enemySpawner.SpawnSupremeSimian();
+            //call big monke Supreme Simian
+            Debug.Log("Calling supreme simian from inventory manager");
+            enemySpawner.SpawnSupremeSimian();
+            SupremeSimianSpawned = true;
+        }
     }
 }

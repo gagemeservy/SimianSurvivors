@@ -30,10 +30,10 @@ public class VineController : WeaponController
         }
     }
 
-    protected override void lowerCoolDown(float amountToLowerBy)
-    {
-        base.lowerCoolDown(amountToLowerBy);
-    }
+    //protected override void lowerCoolDown(float amountToLowerBy)
+    //{
+    //    base.lowerCoolDown(amountToLowerBy);
+    //}
 
     GameObject SpawnAndAttack(int i)
     {

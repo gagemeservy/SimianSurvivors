@@ -23,10 +23,16 @@ public class UIController : MonoBehaviour
 
     PlayerStats player;
 
+    float displayAttackSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
+        
+
         player = FindObjectOfType<PlayerStats>();
+        displayAttackSpeed = 1 + player.currentAttackSpeed;
+
         timeElapsed = Time.deltaTime;
 
         minutes = Mathf.FloorToInt(timeElapsed / 60);
@@ -42,7 +48,7 @@ public class UIController : MonoBehaviour
 
         this.attackDamageText.SetText("Attack Multiplier: " + player.currentAttackDamage);
 
-        this.attackspeedText.SetText("Attack Speed: " + player.currentAttackSpeed);
+        this.attackspeedText.SetText("Attack Speed: " + displayAttackSpeed);
 
         this.levelText.SetText("Level: " + player.level);
 
@@ -52,6 +58,8 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        displayAttackSpeed = 1 + player.currentAttackSpeed;
+
         timeElapsed += Time.deltaTime;
         minutes = Mathf.FloorToInt(timeElapsed / 60);
         seconds = Mathf.FloorToInt(timeElapsed % 60);
@@ -66,7 +74,7 @@ public class UIController : MonoBehaviour
 
         this.attackDamageText.SetText("Attack Multiplier: " + player.currentAttackDamage);
 
-        this.attackspeedText.SetText("Attack Speed: " + player.currentAttackSpeed);
+        this.attackspeedText.SetText("Attack Speed: " + displayAttackSpeed);
 
         this.levelText.SetText("Level: " + player.level);
 

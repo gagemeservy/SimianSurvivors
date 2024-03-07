@@ -13,7 +13,10 @@ public class CoconutBehavior : ProjectileWeaponBehavior
 
     // Update is called once per frame
     void Update()
-    { 
-        transform.position += direction * weaponData.Speed * Time.deltaTime;
+    {
+        if (!PlayerController.isPaused)
+        {
+            transform.position += direction * weaponData.Speed * Time.deltaTime;
+        }
     }
 }

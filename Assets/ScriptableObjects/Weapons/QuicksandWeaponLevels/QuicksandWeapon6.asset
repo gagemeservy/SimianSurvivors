@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: QuicksandWeapon6
   m_EditorClassIdentifier: 
   prefab: {fileID: 4837854565455472783, guid: af5baa19efd099e439a97f07f97f1dd7, type: 3}
-  damage: 1
+  damage: 0.1
   knockback: 2
   speed: 0
   freezeDuration: 5

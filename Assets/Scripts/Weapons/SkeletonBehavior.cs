@@ -15,7 +15,9 @@ public class SkeletonBehavior : ProjectileWeaponBehavior
     void Update()
     { 
         //transform.position += direction * weaponData.Speed * Time.deltaTime;
-
-        transform.position += direction * weaponData.Speed * Time.deltaTime + new Vector3((Mathf.Sin(Time.time) * .01f), 0.0f, 0.0f);
+        if(!PlayerController.isPaused)
+        {
+            transform.position += direction * weaponData.Speed * Time.deltaTime + new Vector3((Mathf.Sin(Time.time) * .01f), 0.0f, 0.0f);
+        }
     }
 }

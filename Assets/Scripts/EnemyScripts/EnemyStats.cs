@@ -128,9 +128,13 @@ public class EnemyStats : MonoBehaviour
     {
         //Debug.Log(enemyData.ToString());
         //replace false with statement to check that enemyData.ToString() == "SupremeSimian" something make sure you get the right title
-        if (false)
+        if (enemyData.ToString().Contains("SupremeSimian (EnemyScriptableObject)"))
         {
-            //if supreme simian, end the game. Probably have a function on PlayerStats or something and call it
+            //if supreme simian1, call supremeSimian2
+            ////if supremeSimiman2 end the game. Probably have a function on PlayerStats or something and call it
+            //Application.Quit();
+            //player.FindChild("PlayerStats").
+            Debug.Log("DIED");
         }
         else
         {

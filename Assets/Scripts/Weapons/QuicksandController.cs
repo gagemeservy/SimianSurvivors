@@ -18,10 +18,10 @@ public class QuicksandController : WeaponController
         locationArray[0,0] = spawnRadius1;
         locationArray[0, 1] = spawnRadius2;
         locationArray[1, 0] = -spawnRadius1;
-        locationArray[1, 1] = spawnRadius2;
-        locationArray[2, 0] = spawnRadius1;
-        locationArray[2, 1] = -spawnRadius2;
-        locationArray[3, 0] = -spawnRadius1;
+        locationArray[1, 1] = -spawnRadius2;
+        locationArray[2, 0] = -spawnRadius1;
+        locationArray[2, 1] = spawnRadius2;
+        locationArray[3, 0] = spawnRadius1;
         locationArray[3, 1] = -spawnRadius2;
         currentNumberOfAttacksToDo = weaponData.NumberOfAttacksToDo;
     }

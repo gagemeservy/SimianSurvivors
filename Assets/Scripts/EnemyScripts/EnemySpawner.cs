@@ -41,6 +41,8 @@ public class EnemySpawner : MonoBehaviour
 
     Transform player;
 
+    public GameObject finalBossPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -126,7 +128,7 @@ public class EnemySpawner : MonoBehaviour
         //pass in monkey Supreme Simian prefab
         //how to end game once he dies
         //dilemma
-        //Instantiate(enemyGroup.enemyPrefab, player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
+        Instantiate(finalBossPrefab, player.position + relativeSpawnPoints[Random.Range(0, relativeSpawnPoints.Count)].position, Quaternion.identity);
     }
 
     public void OnEnemyKilled()

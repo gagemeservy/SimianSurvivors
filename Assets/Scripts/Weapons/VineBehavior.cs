@@ -15,6 +15,9 @@ public class VineBehavior : ProjectileWeaponBehavior
 
     private void Update()
     {
-        transform.position = direction + player.position;
+        if (!PlayerController.isPaused)
+        {
+            transform.position = direction + player.position;
+        }
     }
 }

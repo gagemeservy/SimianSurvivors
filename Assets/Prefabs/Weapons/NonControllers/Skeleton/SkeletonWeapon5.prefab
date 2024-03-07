@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c2a494db96ab4b49ae35cf831fb4cf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfterSeconds: 10
+  destroyAfterSeconds: 20
   weaponData: {fileID: 11400000, guid: ca7c15530380c524cb36dda588eec5a8, type: 2}
   currentDamage: 1
   currentNumberOfAttacksToDo: 8

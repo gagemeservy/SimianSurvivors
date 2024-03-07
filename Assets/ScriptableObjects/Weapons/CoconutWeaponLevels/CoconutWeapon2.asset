@@ -18,7 +18,7 @@ MonoBehaviour:
   speed: 9
   freezeDuration: 5
   pierce: 9
-  numberOfAttacksToDo: 6
+  numberOfAttacksToDo: 4
   cooldownDuration: 2.2
   currentForce: 1
   level: 2

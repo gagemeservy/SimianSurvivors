@@ -166,6 +166,7 @@ MonoBehaviour:
   announcementBubble: {fileID: 0}
   playerAnnouncements: {fileID: 0}
   announceDuration: 1
+  despawnDistance: 20
 --- !u!114 &-6817364407658107276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +182,7 @@ MonoBehaviour:
   drops:
   - name: YellowXPnut
     itemPrefab: {fileID: 71473799619653679, guid: 3d5c4d9e3a86a6f499a616d4efcee2e3, type: 3}
-    dropRate: 60
+    dropRate: 8
   - name: Health
     itemPrefab: {fileID: 6509846541490924993, guid: 0618eaea966979e43b355449d9dae702, type: 3}
     dropRate: 0.1

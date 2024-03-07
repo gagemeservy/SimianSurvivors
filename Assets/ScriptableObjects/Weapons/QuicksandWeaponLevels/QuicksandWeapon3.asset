@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: QuicksandWeapon3
   m_EditorClassIdentifier: 
   prefab: {fileID: 4837854565455472783, guid: 1e24708597479314fa17a11ea1d64010, type: 3}
-  damage: 0.9
+  damage: 0.08
   knockback: 2
   speed: 0
   freezeDuration: 5
   pierce: 450
-  numberOfAttacksToDo: 3
+  numberOfAttacksToDo: 2
   cooldownDuration: 4.2
   currentForce: 54
   level: 3
   nextLevelPrefab: {fileID: 9055042534263378847, guid: 87f171928b9c4974682d30ba9d4747e3, type: 3}
   relativeSpawnPoints: []
-  description: -1 projectile
+  description: -2 projectiles

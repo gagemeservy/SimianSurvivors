@@ -18,15 +18,13 @@ MonoBehaviour:
   speed: 1
   freezeDuration: 5
   pierce: 45
-  numberOfAttacksToDo: 5
-  cooldownDuration: 1.1
+  numberOfAttacksToDo: 3
+  cooldownDuration: 3
   currentForce: 1
   level: 3
   nextLevelPrefab: {fileID: 7785816997681255911, guid: 1c7611818b5b2c444a2440f7c99b8301, type: 3}
   relativeSpawnPoints:
   - {fileID: 920561416466593517, guid: 94f5f1ba3f2a24543a67408a78347d96, type: 3}
-  - {fileID: 5807268601960470145, guid: 59ec284253d61ad418328b622a3b86f2, type: 3}
-  - {fileID: 2604194076648927238, guid: 5b3e2cd95c7189342ab6f1053f57192a, type: 3}
   - {fileID: 7321487737807095688, guid: b38807f3499f4c34a9ec868e5fc75510, type: 3}
   - {fileID: 7312851779398084828, guid: e485402cba6780048a2b8181afa8fcd5, type: 3}
   description: -10% damage

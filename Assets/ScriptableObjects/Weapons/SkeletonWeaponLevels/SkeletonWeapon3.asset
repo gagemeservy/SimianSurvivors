@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: SkeletonWeapon3
   m_EditorClassIdentifier: 
   prefab: {fileID: 6434255417989740506, guid: d97ed92237cef2247ae10c939f9877ce, type: 3}
-  damage: 7.2
+  damage: 6.4
   knockback: 2
   speed: 0.9
   freezeDuration: 5
-  pierce: 9
+  pierce: 40
   numberOfAttacksToDo: 8
   cooldownDuration: 5.5
   currentForce: 1
@@ -25,7 +25,6 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 8830111028188245453, guid: 5ba7532e28137a84ab09189e784cebfb, type: 3}
   relativeSpawnPoints:
   - {fileID: 7779971353862246800, guid: 1239655879728e3449b03ef7e00332ef, type: 3}
-  - {fileID: 3915591032748644296, guid: 01c0b967c99590b4495d4ceb7b0d51bf, type: 3}
   - {fileID: 7405382620331020231, guid: c6bab85f8aa63c44c911eadf4d4803d9, type: 3}
   - {fileID: 7624990436742990880, guid: 68460ea1425dd6040bbc917a3059a46a, type: 3}
   - {fileID: 6547722053803537037, guid: 46eb4308f63e6b0458ce2387fa8d1577, type: 3}

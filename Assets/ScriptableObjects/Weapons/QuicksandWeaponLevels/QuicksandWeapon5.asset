@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: QuicksandWeapon5
   m_EditorClassIdentifier: 
   prefab: {fileID: 4837854565455472783, guid: 6e107ac7413817e4b983ccb689eaa66c, type: 3}
-  damage: 0.9
+  damage: 0.08
   knockback: 2
   speed: 0
   freezeDuration: 5
@@ -24,4 +24,4 @@ MonoBehaviour:
   level: 5
   nextLevelPrefab: {fileID: 9055042534263378847, guid: 30b480dc7a5497e4f895303e10c1282d, type: 3}
   relativeSpawnPoints: []
-  description: -10% damage
+  description: -20% damage

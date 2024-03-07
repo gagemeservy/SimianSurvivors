@@ -18,8 +18,8 @@ MonoBehaviour:
   speed: 1
   freezeDuration: 5
   pierce: 50
-  numberOfAttacksToDo: 6
-  cooldownDuration: 1.1
+  numberOfAttacksToDo: 5
+  cooldownDuration: 3
   currentForce: 1
   level: 6
   nextLevelPrefab: {fileID: 7785816997681255911, guid: f18c810b7b87942439ede24f63a51310, type: 3}
@@ -29,5 +29,4 @@ MonoBehaviour:
   - {fileID: 2604194076648927238, guid: 5b3e2cd95c7189342ab6f1053f57192a, type: 3}
   - {fileID: 7321487737807095688, guid: b38807f3499f4c34a9ec868e5fc75510, type: 3}
   - {fileID: 7312851779398084828, guid: e485402cba6780048a2b8181afa8fcd5, type: 3}
-  - {fileID: 997538064152025710, guid: 242c8d341d4ac88479dfdc1d94c30cfa, type: 3}
-  description: -1 projectile
+  description: -2 projectiles

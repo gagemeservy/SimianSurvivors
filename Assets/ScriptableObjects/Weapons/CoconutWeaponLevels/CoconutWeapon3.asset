@@ -24,4 +24,4 @@ MonoBehaviour:
   level: 3
   nextLevelPrefab: {fileID: 2106162409706381382, guid: 4dd67d29abab00249b5592cbb131777b, type: 3}
   relativeSpawnPoints: []
-  description: -1 projectile
+  description: -2 projectiles

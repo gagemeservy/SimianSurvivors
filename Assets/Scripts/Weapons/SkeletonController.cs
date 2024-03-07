@@ -30,10 +30,10 @@ public class SkeletonController : WeaponController
         }
     }
 
-    protected override void lowerCoolDown(float amountToLowerBy)
-    {
-        base.lowerCoolDown(amountToLowerBy);
-    }
+    //protected override bool lowerCoolDown(float amountToLowerBy)
+    //{
+    //    base.lowerCoolDown(amountToLowerBy);
+    //}
 
     GameObject SpawnAndAttack(int i)
     {

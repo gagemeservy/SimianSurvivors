@@ -18,10 +18,10 @@ MonoBehaviour:
   speed: 10
   freezeDuration: 5
   pierce: 10
-  numberOfAttacksToDo: 7
+  numberOfAttacksToDo: 6
   cooldownDuration: 2.2
   currentForce: 1
   level: 6
   nextLevelPrefab: {fileID: 2106162409706381382, guid: 199274a8f0ed57444863bb128d7e04c2, type: 3}
   relativeSpawnPoints: []
-  description: -1 projectile
+  description: -2 projectiles

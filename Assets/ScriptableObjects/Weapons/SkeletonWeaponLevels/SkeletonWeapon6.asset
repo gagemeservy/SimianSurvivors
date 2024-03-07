@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: SkeletonWeapon6
   m_EditorClassIdentifier: 
   prefab: {fileID: 6434255417989740506, guid: 9e29498189153364b92647b18928462d, type: 3}
-  damage: 7.2
+  damage: 6.4
   knockback: 2
   speed: 1
   freezeDuration: 5
-  pierce: 10
+  pierce: 50
   numberOfAttacksToDo: 8
   cooldownDuration: 5
   currentForce: 1
@@ -25,11 +25,10 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 8830111028188245453, guid: 864daee031f83b04dba2c0d954cf8e1f, type: 3}
   relativeSpawnPoints:
   - {fileID: 7779971353862246800, guid: 1239655879728e3449b03ef7e00332ef, type: 3}
-  - {fileID: 3915591032748644296, guid: 01c0b967c99590b4495d4ceb7b0d51bf, type: 3}
   - {fileID: 7405382620331020231, guid: c6bab85f8aa63c44c911eadf4d4803d9, type: 3}
   - {fileID: 7624990436742990880, guid: 68460ea1425dd6040bbc917a3059a46a, type: 3}
   - {fileID: 6547722053803537037, guid: 46eb4308f63e6b0458ce2387fa8d1577, type: 3}
   - {fileID: 3081017288366704824, guid: db1daa848f6789646bea37cf5da758a9, type: 3}
   - {fileID: 517941936136783449, guid: e20a87c848ea51b4fb86fd5669256c60, type: 3}
   - {fileID: 6009482858910208855, guid: 1217f70224c46c34abb9c2983f161796, type: 3}
-  description: -10% damage
+  description: -20% damage

@@ -47,11 +47,11 @@ public class CoconutController : WeaponController
         }
     }
 
-    protected override void lowerCoolDown(float amountToLowerBy)
-    {
-        //Debug.Log("Coconut cooldown");
-        base.lowerCoolDown(amountToLowerBy);
-    }
+    //protected override void lowerCoolDown(float amountToLowerBy)
+    //{
+    //    //Debug.Log("Coconut cooldown");
+    //    base.lowerCoolDown(amountToLowerBy);
+    //}
 
     GameObject SpawnAndAttack(int i)
     {

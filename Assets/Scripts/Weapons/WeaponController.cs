@@ -28,7 +28,19 @@ public class WeaponController : MonoBehaviour
         coolDownReductionValue = playerStats.currentAttackSpeed;
         damageMultiplier = playerStats.currentAttackDamage;
 
-        lowerCoolDown(coolDownReductionValue);
+        if (coolDownReductionValue > 0)
+        {
+            if ((maxCooldown - coolDownReductionValue) > 0.3)
+            {
+                maxCooldown -= coolDownReductionValue;
+            }
+            else
+            {
+                maxCooldown = 0.3f;
+            }
+        }
+
+        //lowerCoolDown(coolDownReductionValue);
         //currentCooldown = weaponData.cooldownDuration; //this instantly restarts the cooldown
         currentCooldown = -1;
     }
@@ -36,29 +48,39 @@ public class WeaponController : MonoBehaviour
 
     virtual protected void Update()
     {
-        if(playerStats.currentAttackSpeed != coolDownReductionValue)
+        if (!PlayerController.isPaused)
         {
-            maxCooldown += coolDownReductionValue;
+            if (playerStats.currentAttackSpeed != coolDownReductionValue)
+            {
+                float oldCoolDownReductionValue = coolDownReductionValue;
+                maxCooldown += oldCoolDownReductionValue;
 
-            coolDownReductionValue = playerStats.currentAttackSpeed;
-            lowerCoolDown(coolDownReductionValue);
-        }
+                coolDownReductionValue = playerStats.currentAttackSpeed;
+                bool success = lowerCoolDown(coolDownReductionValue);
 
-        damageMultiplier = playerStats.currentAttackDamage;
+                if (!success)
+                {
+                    maxCooldown -= oldCoolDownReductionValue;
+                    coolDownReductionValue = oldCoolDownReductionValue;
+                }
+            }
 
-        currentCooldown -= Time.deltaTime;
+            damageMultiplier = playerStats.currentAttackDamage;
 
-        newDirection = playerMovement.moveDirection;
+            currentCooldown -= Time.deltaTime;
 
-        if (newDirection != Vector3.zero)
-        {
-            previousDirection = newDirection;
-        }
+            newDirection = playerMovement.moveDirection;
 
-        if (currentCooldown < 0)
-        {
-            Attack();
-            currentCooldown = maxCooldown;
+            if (newDirection != Vector3.zero)
+            {
+                previousDirection = newDirection;
+            }
+
+            if (currentCooldown < 0)
+            {
+                Attack();
+                currentCooldown = maxCooldown;
+            }
         }
     }
 
@@ -73,13 +95,16 @@ public class WeaponController : MonoBehaviour
         lowerCoolDown(amountToLowerBy);
     }
 
-    virtual protected void lowerCoolDown(float amountToLowerBy)
+    virtual protected bool lowerCoolDown(float amountToLowerBy)
     {
         //Debug.Log("in LOWER COOL DOWN");
-        if (maxCooldown > (0 + amountToLowerBy))
+        if (maxCooldown > (0.2 + amountToLowerBy))
         {
             maxCooldown -= amountToLowerBy;
+            return true;
         }
+
+        return false;
     }
 
     virtual protected void Attack()
