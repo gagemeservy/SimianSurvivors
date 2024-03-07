@@ -79,12 +79,16 @@ public class PlayerStats : MonoBehaviour
     public int LevelDownsLeft = 0;
     AudioManager audioPlayer;
     [Header("LevelDownTimer")]
-    public float levelDownDuration = .1f;
+    float levelDownDuration = .1f;
     float levelDownTimer;
 
     private void Awake()
     {
-        audioPlayer = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if(GameObject.FindGameObjectWithTag("Audio") != null)
+        {
+            audioPlayer = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        }
+        
         
         inventory = GetComponent<InventoryManager>();
         //weaponIndex = 0;
@@ -213,7 +217,12 @@ public class PlayerStats : MonoBehaviour
 
     void LevelDown()
     {
-        audioPlayer.PlaySFX(audioPlayer.LevelUpGetItem);
+        //Debug.Log("In level up! Weapon 1 level is " + inventory.weaponSlots[0].weaponData.Level);
+        if(audioPlayer != null)
+        {
+            audioPlayer.PlaySFX(audioPlayer.LevelUpGetItem);
+        }
+       
 
         levelDownTimer = levelDownDuration;
 
@@ -225,9 +234,10 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
-            //levelDown1ActualButton.SetActive(false);
-            levelDown1ActualButton.enabled = false;
             levelDown1Button.SetText(inventory.weaponSlots[0].weaponData.Description);
+            levelDown1ActualButton.enabled = false;
+            //levelDown1Button.SetText(inventory.weaponSlots[0].weaponData.Description.ToString());
+            //levelDown1Image.sprite = inventory.weaponSlots[0].weaponData.Icon;
         }
 
         if (inventory.weaponSlots[1].weaponData.Level != 1)
@@ -237,9 +247,9 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
-            //levelDown1ActualButton.SetActive(false);
-            levelDown2ActualButton.enabled = false;
             levelDown2Button.SetText(inventory.weaponSlots[1].weaponData.Description);
+            levelDown2ActualButton.enabled = false;
+
         }
 
         if (inventory.weaponSlots[2].weaponData.Level != 1)
@@ -249,14 +259,18 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
-            //levelDown1ActualButton.SetActive(false);
-            levelDown3ActualButton.enabled = false;
             levelDown3Button.SetText(inventory.weaponSlots[2].weaponData.Description);
+            levelDown3ActualButton.enabled = false;
+
         }
 
 
         
-        if (inventory.weaponSlots[2].weaponData.Level != 1 && inventory.weaponSlots[1].weaponData.Level != 1 & inventory.weaponSlots[0].weaponData.Level != 1)
+        if (inventory.weaponSlots[2].weaponData.Level == 1 && inventory.weaponSlots[1].weaponData.Level == 1 & inventory.weaponSlots[0].weaponData.Level == 1)
+        {
+            return;
+        }
+        else
         {
             levelDownScreen.SetActive(true);
             Time.timeScale = 0;
@@ -357,7 +371,7 @@ public class PlayerStats : MonoBehaviour
         currentMoveSpeed += speedIncrease;
     }
 
-    void Announce(string text)
+    public void Announce(string text)
     {
         announceTimer = announceDuration;
         announcementBubble.SetActive(true);

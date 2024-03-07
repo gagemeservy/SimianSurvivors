@@ -17,7 +17,7 @@ MonoBehaviour:
   knockback: 2
   speed: 1
   freezeDuration: 5
-  pierce: 50
+  pierce: 40
   numberOfAttacksToDo: 7
   cooldownDuration: 2.5
   currentForce: 1

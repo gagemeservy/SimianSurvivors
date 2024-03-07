@@ -17,9 +17,12 @@ public class InventoryManager : MonoBehaviour
 
     public GameObject levelDownScreen;
 
+    public PlayerStats playerStats;
+
     private void Awake()
     {
         enemySpawner.GetComponent<EnemySpawner>();
+        playerStats.GetComponent<PlayerStats>();
     }
 
     public void AddWeapon(int slotIndex, WeaponController weapon)
@@ -79,6 +82,7 @@ public class InventoryManager : MonoBehaviour
             //Debug.Log("Calling supreme simian from inventory manager");
             enemySpawner.SpawnSupremeSimian();
             SupremeSimianSpawned = true;
+            playerStats.Announce("THE SUPREME SIMIAN HAS SPAWNED");
         }
     }
 }
