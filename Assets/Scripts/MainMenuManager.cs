@@ -47,6 +47,27 @@ public class MainMenuManager : MonoBehaviour
         InstructionScreen.SetActive(false);
         MainMenuScreen.SetActive(true);
     }
+
+    public void Youtube()
+    {
+        Application.OpenURL("https://www.youtube.com/@SubbyDoodles");
+    }
+
+    public void Twitter()
+    {
+        Application.OpenURL("https://twitter.com/Subby_Doodles");
+    }
+
+    public void BlueSky()
+    {
+        Application.OpenURL("https://bsky.app/profile/subbydoodles.bsky.social");
+    }
+
+    public void Itch()
+    {
+        Application.OpenURL("https://subbydoodles.itch.io/");
+    }
+
     IEnumerator LoadAsyncScene(String sceneToSwitchTo)
     {
         // The Application loads the Scene in the background as the current Scene runs.
