@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -36,6 +37,21 @@ public class AudioManager : MonoBehaviour
         {
             SFXSource.PlayOneShot(clip);
         }
-        
     }
+
+
+    /*public void PlayReverseSFX(AudioClip audioClip)
+    {
+        SFXSource.pitch = -1;
+        SFXSource.loop = true;
+        SFXSource.clip = audioClip;
+        SFXSource.Play();
+        StartCoroutine(StopLoop());
+    }
+
+    public IEnumerator StopLoop()
+    {
+        yield return new WaitForSeconds(1f);
+        SFXSource.loop = false;
+    }*/
 }

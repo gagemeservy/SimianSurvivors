@@ -15,6 +15,8 @@ public class InventoryManager : MonoBehaviour
 
     private bool SupremeSimianSpawned = false;
 
+    public GameObject levelDownScreen;
+
     private void Awake()
     {
         enemySpawner.GetComponent<EnemySpawner>();
@@ -25,7 +27,7 @@ public class InventoryManager : MonoBehaviour
         weaponSlots[slotIndex] = weapon;
         weaponLevels[slotIndex] = weapon.weaponData.Level;
         weaponUIslotsImages[slotIndex].sprite = weapon.weaponData.Icon;
-        weaponUIslotsText[slotIndex].SetText(weapon.weaponData.Title + " \nLevel " + weapon.weaponData.Level);
+        weaponUIslotsText[slotIndex].SetText("Level " + weapon.weaponData.Level + "\n" + weapon.weaponData.Title);
     }
 
     public void LevelUpWeapon(int slotIndex)
@@ -54,6 +56,10 @@ public class InventoryManager : MonoBehaviour
         }
 
         CheckForFinalLevels();
+
+        levelDownScreen.SetActive(false);
+        Time.timeScale = 1;
+        PlayerController.isPaused = false;
     }
 
     void CheckForFinalLevels()
@@ -70,7 +76,7 @@ public class InventoryManager : MonoBehaviour
             }
 
             //call big monke Supreme Simian
-            Debug.Log("Calling supreme simian from inventory manager");
+            //Debug.Log("Calling supreme simian from inventory manager");
             enemySpawner.SpawnSupremeSimian();
             SupremeSimianSpawned = true;
         }

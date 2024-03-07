@@ -24,6 +24,6 @@ MonoBehaviour:
   level: 1
   nextLevelPrefab: {fileID: 0}
   relativeSpawnPoints: []
-  description: -10% force
+  description: This weapon is already level 1. This is as bad as it gets.
   icon: {fileID: 21300000, guid: f40b3104b871a794c834cf7d18b870ee, type: 3}
   title: Quicksand

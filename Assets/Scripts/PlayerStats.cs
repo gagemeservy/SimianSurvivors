@@ -7,6 +7,7 @@ using TMPro;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
 using UnityEngine.U2D;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -63,8 +64,28 @@ public class PlayerStats : MonoBehaviour
 
     public List<GameObject> possibleWeapons = new List<GameObject>(4);
 
+    public GameObject gameOverScreen;
+    public GameObject levelDownScreen;
+    public Button levelDown1ActualButton;
+    public Button levelDown2ActualButton;
+    public Button levelDown3ActualButton;
+    public TMP_Text levelDown1Button;
+    public TMP_Text levelDown2Button;
+    public TMP_Text levelDown3Button;
+    public Image levelDown1Image;
+    public Image levelDown2Image;
+    public Image levelDown3Image;
+
+    public int LevelDownsLeft = 0;
+    AudioManager audioPlayer;
+    [Header("LevelDownTimer")]
+    public float levelDownDuration = .1f;
+    float levelDownTimer;
+
     private void Awake()
     {
+        audioPlayer = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        
         inventory = GetComponent<InventoryManager>();
         //weaponIndex = 0;
         //weaponController = GetComponent<WeaponController>();
@@ -81,7 +102,10 @@ public class PlayerStats : MonoBehaviour
         currentMaxHealth = characterData.MaxHealth;
         currentMagnet = characterData.Magnet;
 
-        
+        gameOverScreen.SetActive(false);
+        levelDownScreen.SetActive(false);
+
+
 
         //This function can be replicated with other numbers, of course it could be dynamic and I could pass in a number but I don't wanna waste time.
         Spawn3RandomWeapons();
@@ -120,34 +144,50 @@ public class PlayerStats : MonoBehaviour
 
     private void Update()
     {
-        if (invincibilityTimer > 0)
+        if (!PlayerController.isPaused)
         {
-            invincibilityTimer -= Time.deltaTime;
-        }
-        else if (isInvincible)
-        {
-            isInvincible = false;
-        }
+            if (invincibilityTimer > 0)
+            {
+                invincibilityTimer -= Time.deltaTime;
+            }
+            else if (isInvincible)
+            {
+                isInvincible = false;
+            }
 
-        if (announceTimer > 0)
-        {
-            announceTimer -= Time.deltaTime;
-        }
-        else
-        {
-            announcementBubble.SetActive(false);
-        }
+            if (announceTimer > 0)
+            {
+                announceTimer -= Time.deltaTime;
+            }
+            else
+            {
+                announcementBubble.SetActive(false);
+            }
 
-        if (flashTimer > 0)
-        {
-            flashTimer -= Time.deltaTime;
-        }
-        else
-        {
-            sprite.color = originalColor;
-        }
+            if (flashTimer > 0)
+            {
+                flashTimer -= Time.deltaTime;
+            }
+            else
+            {
+                sprite.color = originalColor;
+            }
 
-        Recover();
+            Recover();
+
+            if (LevelDownsLeft > 0)
+            {
+                if(levelDownTimer <= 0)
+                {
+                    LevelDownsLeft--;
+                    LevelDown();
+                }
+                else
+                {
+                    levelDownTimer -= Time.deltaTime;
+                }
+            }
+        }
     }
 
     public void IncreaseExperience(int amount)
@@ -165,6 +205,62 @@ public class PlayerStats : MonoBehaviour
             level++;
             experience -= experienceCap;
             experienceCap = experienceCap + (experienceCap * experienceCapIncrease);
+            //LevelDown();
+            //MAYBE CALL THIS FUNCTION AFTER AND PASS IT THE NUMBER OF LEVEL UPS OR SOMETHING
+            LevelDownsLeft++;
+        }
+    }
+
+    void LevelDown()
+    {
+        audioPlayer.PlaySFX(audioPlayer.LevelUpGetItem);
+
+        levelDownTimer = levelDownDuration;
+
+        //BEFORE SETTING SCREEN ACTIVE. CHANGE ON THE LABELS ON THE BUTTONS.
+        if (inventory.weaponSlots[0].weaponData.Level != 1)
+        {
+            levelDown1Button.SetText(inventory.weaponSlots[0].weaponData.Title + " Lv. " + (inventory.weaponSlots[0].weaponData.Level - 1) + " :\n" + inventory.weaponSlots[0].weaponData.Description);
+            levelDown1Image.sprite = inventory.weaponSlots[0].weaponData.Icon;
+        }
+        else
+        {
+            //levelDown1ActualButton.SetActive(false);
+            levelDown1ActualButton.enabled = false;
+            levelDown1Button.SetText(inventory.weaponSlots[0].weaponData.Description);
+        }
+
+        if (inventory.weaponSlots[1].weaponData.Level != 1)
+        {
+            levelDown2Button.SetText(inventory.weaponSlots[1].weaponData.Title + " Lv. " + (inventory.weaponSlots[1].weaponData.Level - 1) + " :\n" + inventory.weaponSlots[1].weaponData.Description);
+            levelDown2Image.sprite = inventory.weaponSlots[1].weaponData.Icon;
+        }
+        else
+        {
+            //levelDown1ActualButton.SetActive(false);
+            levelDown2ActualButton.enabled = false;
+            levelDown2Button.SetText(inventory.weaponSlots[1].weaponData.Description);
+        }
+
+        if (inventory.weaponSlots[2].weaponData.Level != 1)
+        {
+            levelDown3Button.SetText(inventory.weaponSlots[2].weaponData.Title + " Lv. " + (inventory.weaponSlots[2].weaponData.Level - 1) + " :\n" + inventory.weaponSlots[2].weaponData.Description);
+            levelDown3Image.sprite = inventory.weaponSlots[2].weaponData.Icon;
+        }
+        else
+        {
+            //levelDown1ActualButton.SetActive(false);
+            levelDown3ActualButton.enabled = false;
+            levelDown3Button.SetText(inventory.weaponSlots[2].weaponData.Description);
+        }
+
+
+        
+        if (inventory.weaponSlots[2].weaponData.Level != 1 && inventory.weaponSlots[1].weaponData.Level != 1 & inventory.weaponSlots[0].weaponData.Level != 1)
+        {
+            levelDownScreen.SetActive(true);
+            Time.timeScale = 0;
+            PlayerController.isPaused = true;
         }
     }
 
@@ -179,7 +275,7 @@ public class PlayerStats : MonoBehaviour
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
 
-            if (currentHealth <= 0)
+            if (currentHealth < 1)
             {
                 Kill();
             }
@@ -189,7 +285,17 @@ public class PlayerStats : MonoBehaviour
 
     public void Kill()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        //Bring up end game screen
+        //Announce("YOU DIED");
+        sprite.color = Color.black;
+
+        Time.timeScale = 0;
+        PlayerController.isPaused = true;
+        gameOverScreen.SetActive(true);
+        //PlayerController.Pause(gameOverScreen);
+
+        //Destroy(gameObject);
         //END THE GAME
     }
 

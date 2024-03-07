@@ -10,11 +10,9 @@ public class MainMenuManager : MonoBehaviour
     public static bool isPaused = false;
     public GameObject MainMenuScreen;
     public GameObject InstructionScreen;
-    //AudioManager audioPlayer;
 
     private void Awake()
     {
-        //this.audioPlayer = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         InstructionScreen.SetActive(true);
         MainMenuScreen.SetActive(false);
     }

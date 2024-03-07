@@ -31,6 +31,6 @@ MonoBehaviour:
   - {fileID: 7321487737807095688, guid: b38807f3499f4c34a9ec868e5fc75510, type: 3}
   - {fileID: 7312851779398084828, guid: e485402cba6780048a2b8181afa8fcd5, type: 3}
   - {fileID: 997538064152025710, guid: 242c8d341d4ac88479dfdc1d94c30cfa, type: 3}
-  description: +20% cooldown
+  description: -2 projectiles
   icon: {fileID: 21300000, guid: 4c0d1b9482aeb9243a455f16d67fc696, type: 3}
   title: Vine

@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         pauseScreen.SetActive(false);
-        //unPause(pauseScreen);
-        //unPause(this, this.gameOverScreen);
     }
 
     private void Start()
@@ -112,13 +110,13 @@ public class PlayerController : MonoBehaviour
 
     public void Quit()
     {
-        ButtonPressSound();
         Application.Quit();
     }
 
     public void MainMenu()
     {
-        ButtonPressSound();
+        Time.timeScale = 1;
+        isPaused = false;
         StartCoroutine(LoadAsyncScene("MainMenu"));
     }
 
