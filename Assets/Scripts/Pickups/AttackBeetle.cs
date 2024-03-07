@@ -10,5 +10,7 @@ public class AttackBeetle : Pickup, ICollectible
     {
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.IncreaseAttack(attackIncrease);
+        AudioManager audioPlayer = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioPlayer.PlaySFX(audioPlayer.LevelUpGetItem);
     }
 }

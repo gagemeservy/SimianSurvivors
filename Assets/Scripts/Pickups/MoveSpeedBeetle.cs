@@ -10,5 +10,7 @@ public class MoveSpeedBeetle : Pickup, ICollectible
     {
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.IncreaseMoveSpeed(speedToIncrease);
+        AudioManager audioPlayer = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioPlayer.PlaySFX(audioPlayer.LevelUpGetItem);
     }
 }

@@ -10,5 +10,7 @@ public class HealthSpeedBeetle : Pickup, ICollectible
     {
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.HealthSpeedIncrease(speedToIncrease);
+        AudioManager audioPlayer = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioPlayer.PlaySFX(audioPlayer.LevelUpGetItem);
     }
 }

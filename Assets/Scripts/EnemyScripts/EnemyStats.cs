@@ -126,6 +126,9 @@ public class EnemyStats : MonoBehaviour
 
     private void OnDestroy()
     {
+        //AudioManager audioPlayer = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        //audioPlayer.PlaySFX(audioPlayer.enemyDeath1);
+
         //Debug.Log(enemyData.ToString());
         //replace false with statement to check that enemyData.ToString() == "SupremeSimian" something make sure you get the right title
         if (enemyData.ToString().Contains("SupremeSimian (EnemyScriptableObject)"))

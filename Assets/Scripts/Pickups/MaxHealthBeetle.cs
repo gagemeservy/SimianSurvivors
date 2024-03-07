@@ -10,5 +10,7 @@ public class MaxHealthBeetle : Pickup, ICollectible
     {
         PlayerStats player = FindObjectOfType<PlayerStats>();
         player.IncreaseMaxHealth(healthToIncrease);
+        AudioManager audioPlayer = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        audioPlayer.PlaySFX(audioPlayer.LevelUpGetItem);
     }
 }

@@ -28,6 +28,9 @@ public class PlayerCollector : MonoBehaviour
             rigidbody2D.AddForce(forceDirection * pullSpeed);
 
             collectible.Collect();
+
+            //AudioManager audioPlayer = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+            //audioPlayer.PlaySFX(audioPlayer.LevelUpGetItem);
         }
     }
 }

@@ -123,6 +123,107 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &27644307
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2134944461626349749, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 336.26813
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134944461626349749, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 289.27905
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134944461626349749, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.1400115
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134944461626349749, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134944461626349749, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134944461626349749, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134944461626349749, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134944461626349749, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134944461626349749, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134944461626349749, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2240262766161156601, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: Music
+      value: 
+      objectReference: {fileID: 8300000, guid: f53ef4dadc3f6464b8ff5d6285e2a08f, type: 3}
+    - target: {fileID: 2240262766161156601, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: SFXSource
+      value: 
+      objectReference: {fileID: 824032533}
+    - target: {fileID: 2240262766161156601, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: enemyDeath1
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d586d370b923874f97c932f67be2784, type: 3}
+    - target: {fileID: 2240262766161156601, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: enemyDeath2
+      value: 
+      objectReference: {fileID: 8300000, guid: b16e49fdd6cd2d44182448279f004787, type: 3}
+    - target: {fileID: 2240262766161156601, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 1667879501}
+    - target: {fileID: 2240262766161156601, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: LevelUpGetItem
+      value: 
+      objectReference: {fileID: 8300000, guid: 9631c6e444998a44494f4216771cb828, type: 3}
+    - target: {fileID: 2504830099739761802, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2504830099739761802, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_TagString
+      value: Audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907052472332620338, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: Priority
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415113926930156792, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415113926930156792, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7415113926930156792, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
 --- !u!1 &44673205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,6 +1962,11 @@ MonoBehaviour:
   - {fileID: 0}
   weaponLevels: 000000000000000000000000
   enemySpawner: {fileID: 285893581}
+--- !u!82 &824032533 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7415113926930156792, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+  m_PrefabInstance: {fileID: 27644307}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &893038725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2868,6 +2974,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 285893580}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1667879501 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6907052472332620338, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
+  m_PrefabInstance: {fileID: 27644307}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1695499606
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,13 +3431,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Move with wasd, arrow keys, or gamepad joystick. Use the mouse for on
-    screen buttons since the gamepad is untested for that.
-
-    You will spawn with
-    3 random max level weapons. Explore, you may find it helpful.
-
-    GOOD LUCK!'
+  m_text: "Move with wasd, arrow keys, or gamepad joystick. Use the mouse for on
+    screen buttons since the gamepad is untested for that.\nYou will spawn with 3
+    random max level weapons. \nExplore. You may find it helpful.\nGOOD LUCK!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70f392a9801922e479904e30195dbaf5, type: 2}
   m_sharedMaterial: {fileID: -6033082874712232077, guid: 70f392a9801922e479904e30195dbaf5, type: 2}
@@ -3765,3 +3872,4 @@ SceneRoots:
   - {fileID: 1027426515451531564}
   - {fileID: 649087928}
   - {fileID: 1137245244}
+  - {fileID: 27644307}
