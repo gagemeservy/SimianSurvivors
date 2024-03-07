@@ -25,3 +25,5 @@ MonoBehaviour:
   nextLevelPrefab: {fileID: 2106162409706381382, guid: a9da274e9d3d5684ba8b1c447298c3bb, type: 3}
   relativeSpawnPoints: []
   description: -10% damage
+  icon: {fileID: 21300000, guid: bc7ed59a36ad2cf4288527da93b1dbaf, type: 3}
+  title: Coconut

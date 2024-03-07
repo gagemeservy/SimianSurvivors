@@ -30,3 +30,5 @@ MonoBehaviour:
   - {fileID: 3081017288366704824, guid: db1daa848f6789646bea37cf5da758a9, type: 3}
   - {fileID: 517941936136783449, guid: e20a87c848ea51b4fb86fd5669256c60, type: 3}
   description: -2 projectiles
+  icon: {fileID: 21300000, guid: 84eedd618dd6e6440825e3a2f48c3df3, type: 3}
+  title: Skeleton Parachute

@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
     public List<WeaponController> weaponSlots = new List<WeaponController>(4);
     public int[] weaponLevels = new int[4];
+    public List<Image> weaponUIslotsImages = new List<Image>(3);
+    public List<TMP_Text> weaponUIslotsText = new List<TMP_Text>(3);
 
     public EnemySpawner enemySpawner;
 
@@ -20,6 +24,8 @@ public class InventoryManager : MonoBehaviour
     {
         weaponSlots[slotIndex] = weapon;
         weaponLevels[slotIndex] = weapon.weaponData.Level;
+        weaponUIslotsImages[slotIndex].sprite = weapon.weaponData.Icon;
+        weaponUIslotsText[slotIndex].SetText(weapon.weaponData.Title + " \nLevel " + weapon.weaponData.Level);
     }
 
     public void LevelUpWeapon(int slotIndex)

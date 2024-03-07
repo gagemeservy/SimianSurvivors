@@ -32,3 +32,5 @@ MonoBehaviour:
   - {fileID: 517941936136783449, guid: e20a87c848ea51b4fb86fd5669256c60, type: 3}
   - {fileID: 6009482858910208855, guid: 1217f70224c46c34abb9c2983f161796, type: 3}
   description: -10% speed
+  icon: {fileID: 21300000, guid: 84eedd618dd6e6440825e3a2f48c3df3, type: 3}
+  title: Skeleton Parachute

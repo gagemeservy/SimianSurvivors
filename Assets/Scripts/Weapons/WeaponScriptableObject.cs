@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -52,5 +53,13 @@ public class WeaponScriptableObject : ScriptableObject
     [SerializeField]
     string description;
     public string Description { get => description; private set => description = value; }
+
+    [SerializeField]
+    Sprite icon;
+    public Sprite Icon { get => icon; private set => icon = value; }
+
+    [SerializeField]
+    String title;
+    public String Title { get => title; private set => title = value; }
 
 }
