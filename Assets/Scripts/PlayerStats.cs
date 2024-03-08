@@ -34,6 +34,7 @@ public class PlayerStats : MonoBehaviour
     public int level = 1;
     public float experienceCap = 100;
     public float experienceCapIncrease;
+    public float experienceCapReductionPerLevel;
 
 
     [Header("I-Frames")]
@@ -209,6 +210,7 @@ public class PlayerStats : MonoBehaviour
             level++;
             experience -= experienceCap;
             experienceCap = experienceCap + (experienceCap * experienceCapIncrease);
+            experienceCapIncrease -= experienceCapReductionPerLevel;
             //LevelDown();
             //MAYBE CALL THIS FUNCTION AFTER AND PASS IT THE NUMBER OF LEVEL UPS OR SOMETHING
             LevelDownsLeft++;

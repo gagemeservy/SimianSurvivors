@@ -25,12 +25,24 @@ public class DropRateManager : MonoBehaviour
         {
             if(randomNumber <= d.dropRate)
             {
-                Instantiate(d.itemPrefab, transform.position, Quaternion.identity);
+                //Instantiate(d.itemPrefab, transform.position, Quaternion.identity);
+                possibleDrops.Add(d);
             }
         }
+
         if(possibleDrops.Count > 0)
         {
             Drops drops = possibleDrops[UnityEngine.Random.Range(0, possibleDrops.Count)];
+            Instantiate(drops.itemPrefab, transform.position, Quaternion.identity);
+        }
+        else if(possibleDrops.Count > 1)
+        {//these greater 1 and greater than 2 if statements try to spawn the rarer items since I set the least rare items as the first ones
+            Drops drops = possibleDrops[UnityEngine.Random.Range(1, possibleDrops.Count)];
+            Instantiate(drops.itemPrefab, transform.position, Quaternion.identity);
+        }
+        else if (possibleDrops.Count > 2)
+        {
+            Drops drops = possibleDrops[UnityEngine.Random.Range(2, possibleDrops.Count)];
             Instantiate(drops.itemPrefab, transform.position, Quaternion.identity);
         }
     }
