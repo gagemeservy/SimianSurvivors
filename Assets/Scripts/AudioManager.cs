@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip enemyDeath2;
     public AudioClip Music;
     public AudioClip LevelUpGetItem;
-
+    public bool playSFXbool = true;
 
     private void Start()
     {
@@ -33,10 +33,27 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(AudioClip clip)
     {
-        if (!SFXSource.isPlaying) 
+        if ((SFXSource.isPlaying == false) && (playSFXbool == true)) 
         {
             SFXSource.PlayOneShot(clip);
         }
+    }
+
+    public void ToggleMusic()
+    {
+        if(musicSource.isPlaying)
+        {
+            musicSource.Stop();
+        }
+        else if (!musicSource.isPlaying)
+        {
+            musicSource.Play();
+        }
+    }
+
+    public void ToggleSFX()
+    {
+        playSFXbool = !playSFXbool;
     }
 
 
