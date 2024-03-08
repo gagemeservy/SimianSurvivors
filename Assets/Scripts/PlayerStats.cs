@@ -222,7 +222,7 @@ public class PlayerStats : MonoBehaviour
         //Debug.Log("In level up! Weapon 1 level is " + inventory.weaponSlots[0].weaponData.Level);
         if(audioPlayer != null)
         {
-            audioPlayer.PlaySFX(audioPlayer.LevelUpGetItem);
+            audioPlayer.PlaySFX(audioPlayer.LevelDown);
         }
        
 

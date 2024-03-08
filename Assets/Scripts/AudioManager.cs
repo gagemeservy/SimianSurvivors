@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip enemyDeath2;
     public AudioClip Music;
     public AudioClip LevelUpGetItem;
+    public AudioClip LevelDown;
     public bool playSFXbool = true;
 
     private void Start()
