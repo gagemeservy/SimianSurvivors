@@ -24,6 +24,7 @@ public class VineController : WeaponController
     {
         base.Attack();
 
+        audioPlayer.PlaySFX(audioPlayer.vine);
         for (int i = 0; i < currentNumberOfAttacksToDo; i++)
         {
             SpawnAndAttack(i);

@@ -12,6 +12,15 @@ public class AudioManager : MonoBehaviour
     public AudioClip Music;
     public AudioClip LevelUpGetItem;
     public AudioClip LevelDown;
+
+    public AudioClip vine;
+    public AudioClip skeleton;
+    public AudioClip vine2;
+    public AudioClip coconut;
+    public AudioClip banana;
+    public AudioClip grub;
+    public AudioClip quicksand;
+
     public bool playSFXbool = true;
 
     private void Start()
@@ -34,10 +43,10 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFX(AudioClip clip)
     {
-        if ((SFXSource.isPlaying == false) && (playSFXbool == true)) 
-        {
+        //if ((SFXSource.isPlaying == false) && (playSFXbool == true)) 
+        //{
             SFXSource.PlayOneShot(clip);
-        }
+        //}
     }
 
     public void ToggleMusic()

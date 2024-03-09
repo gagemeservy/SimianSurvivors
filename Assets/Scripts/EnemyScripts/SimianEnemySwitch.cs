@@ -15,6 +15,7 @@ public class SimianEnemySwitch : MonoBehaviour
 
     public PlayerStats playerStats;
 
+
     private void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();

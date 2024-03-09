@@ -18,10 +18,17 @@ public class WeaponController : MonoBehaviour
 
     protected PlayerStats playerStats;
 
+    protected AudioManager audioPlayer;
+
     virtual protected void Start()
     {
         playerMovement = FindObjectOfType<PlayerController>();
         playerStats = FindObjectOfType<PlayerStats>();
+
+        if (GameObject.FindGameObjectWithTag("Audio") != null)
+        {
+            audioPlayer = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        }
 
         maxCooldown = weaponData.CooldownDuration;
 
@@ -43,6 +50,8 @@ public class WeaponController : MonoBehaviour
         //lowerCoolDown(coolDownReductionValue);
         //currentCooldown = weaponData.cooldownDuration; //this instantly restarts the cooldown
         currentCooldown = -1;
+
+
     }
 
 

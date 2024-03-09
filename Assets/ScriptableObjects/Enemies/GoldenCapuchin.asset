@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GoldenCapuchin
   m_EditorClassIdentifier: 
   damage: 25
-  maxHealth: 6500
+  maxHealth: 2000
   moveSpeed: 1.5

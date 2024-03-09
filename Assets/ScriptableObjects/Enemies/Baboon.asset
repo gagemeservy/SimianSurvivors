@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Baboon
   m_EditorClassIdentifier: 
   damage: 30
-  maxHealth: 10000
+  maxHealth: 1000
   moveSpeed: 1
