@@ -67,6 +67,7 @@ public class PlayerStats : MonoBehaviour
 
     public GameObject gameOverScreen;
     public GameObject levelDownScreen;
+    public GameObject gameWinScreen;
     public Button levelDown1ActualButton;
     public Button levelDown2ActualButton;
     public Button levelDown3ActualButton;
@@ -109,6 +110,7 @@ public class PlayerStats : MonoBehaviour
 
         gameOverScreen.SetActive(false);
         levelDownScreen.SetActive(false);
+        gameWinScreen.SetActive(false);
 
 
 
@@ -312,6 +314,16 @@ public class PlayerStats : MonoBehaviour
         //PlayerController.Pause(gameOverScreen);
 
         //Destroy(gameObject);
+        //END THE GAME
+    }
+
+    public void Win()
+    {
+        sprite.color = Color.white;
+
+        Time.timeScale = 0;
+        PlayerController.isPaused = true;
+        gameWinScreen.SetActive(true);
         //END THE GAME
     }
 

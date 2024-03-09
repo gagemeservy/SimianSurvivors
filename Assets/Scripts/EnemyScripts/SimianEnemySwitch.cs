@@ -13,9 +13,12 @@ public class SimianEnemySwitch : MonoBehaviour
 
     public EnemyStats stats;
 
+    public PlayerStats playerStats;
+
     private void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
+        playerStats = FindObjectOfType<PlayerStats>();
         Debug.Log("Simian Script Title is " + enemyData.ToString());
     }
 
@@ -25,5 +28,11 @@ public class SimianEnemySwitch : MonoBehaviour
         {
             sprite.sprite = spriteToSwitch;
         }
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log("DIED");
+        playerStats.Win();
     }
 }
