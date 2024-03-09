@@ -48,7 +48,12 @@ public class PlayerController : MonoBehaviour
             moveDirection = new Vector2(moveX, moveY).normalized;
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape))
+        //if(Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    PauseButton();
+        //}
+
+        if (Input.GetButtonDown("Cancel"))
         {
             PauseButton();
         }
