@@ -45,7 +45,11 @@ public class AudioManager : MonoBehaviour
     {
         //if ((SFXSource.isPlaying == false) && (playSFXbool == true)) 
         //{
+        if(playSFXbool == true)
+        {
             SFXSource.PlayOneShot(clip);
+        }
+            
         //}
     }
 

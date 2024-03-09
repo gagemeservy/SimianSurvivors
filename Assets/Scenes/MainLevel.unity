@@ -1980,12 +1980,12 @@ MonoBehaviour:
     SpawnCount: 0
   - waveName: Wave5
     enemyGroups:
-    - enemyName: Capuchin
-      enemyCount: 6000
-      spawnCount: 0
-      enemyPrefab: {fileID: 1457612397259887747, guid: fd00807229612de41abfbc2ee31865ce, type: 3}
     - enemyName: GoldCapuchin
       enemyCount: 2
+      spawnCount: 0
+      enemyPrefab: {fileID: 1457612397259887747, guid: fd00807229612de41abfbc2ee31865ce, type: 3}
+    - enemyName: Capuchin
+      enemyCount: 6000
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: fd00807229612de41abfbc2ee31865ce, type: 3}
     waveQuota: 0
@@ -2006,12 +2006,12 @@ MonoBehaviour:
     SpawnCount: 0
   - waveName: Wave5
     enemyGroups:
-    - enemyName: Capuchin
-      enemyCount: 6000
-      spawnCount: 0
-      enemyPrefab: {fileID: 1457612397259887747, guid: fd00807229612de41abfbc2ee31865ce, type: 3}
     - enemyName: GoldCapuchin
       enemyCount: 2
+      spawnCount: 0
+      enemyPrefab: {fileID: 1457612397259887747, guid: fd00807229612de41abfbc2ee31865ce, type: 3}
+    - enemyName: Capuchin
+      enemyCount: 6000
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: fd00807229612de41abfbc2ee31865ce, type: 3}
     waveQuota: 0
