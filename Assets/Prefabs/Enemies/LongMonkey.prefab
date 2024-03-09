@@ -197,7 +197,7 @@ MonoBehaviour:
   announcementBubble: {fileID: 0}
   playerAnnouncements: {fileID: 0}
   announceDuration: 2
-  despawnDistance: 30
+  despawnDistance: 25
 --- !u!50 &886579496753489412
 Rigidbody2D:
   serializedVersion: 4
