@@ -1,15 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
     public static bool isPaused = false;
     public GameObject MainMenuScreen;
     public GameObject InstructionScreen;
+    public EventSystem eventSystem;
+    public GameObject InstructionsFirstButton;
+    public GameObject MainMenuFirstButton;
 
     private void Awake()
     {
@@ -36,16 +42,27 @@ public class MainMenuManager : MonoBehaviour
 
     public void Instructions()
     {
-        ButtonPressSound();
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.sendNavigationEvents = false;
+        //ButtonPressSound();
         InstructionScreen.SetActive(true);
         MainMenuScreen.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(InstructionsFirstButton);
+        EventSystem.current.sendNavigationEvents = true;
     }
 
     public void OkButtonToMenu()
     {
-        ButtonPressSound();
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.sendNavigationEvents = false;
+
+        //ButtonPressSound();
         InstructionScreen.SetActive(false);
         MainMenuScreen.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(MainMenuFirstButton);
+        EventSystem.current.sendNavigationEvents = true;
     }
 
     public void Youtube()
