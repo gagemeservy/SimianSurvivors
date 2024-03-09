@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6638463957298466232}
   - component: {fileID: 886579496753489412}
   m_Layer: 0
-  m_Name: SnubNose
+  m_Name: Baboon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 1a673e13c8f8b184baad213d2ccba45e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 479e24fce6d32be47868d2779bd519e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,18 +134,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009112805, y: 0.057217777}
+  m_Offset: {x: 0.08677292, y: 0.5793314}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.75, y: 1}
+    oldSize: {x: 6.6666665, y: 6.6666665}
     newSize: {x: 0.75, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.43414885, y: 0.6817666}
+  m_Size: {x: 5.306201, y: 3.0126057}
   m_EdgeRadius: 0
 --- !u!114 &-8938445285476957708
 MonoBehaviour:
@@ -160,33 +160,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: YellowXPnut
-    itemPrefab: {fileID: 71473799619653679, guid: 3d5c4d9e3a86a6f499a616d4efcee2e3, type: 3}
-    dropRate: 15
-  - name: OrangeXPnut
-    itemPrefab: {fileID: 6260029731400315184, guid: f00b6fef0819e564e9612c67e8e809fd, type: 3}
-    dropRate: 0.1
   - name: RedXPnut
     itemPrefab: {fileID: 4188998568056715057, guid: 0b7a5259cfc16ea43848530f8dfb4a77, type: 3}
-    dropRate: 0.01
+    dropRate: 100
   - name: Health
     itemPrefab: {fileID: 6509846541490924993, guid: 0618eaea966979e43b355449d9dae702, type: 3}
-    dropRate: 0.01
+    dropRate: 1
   - name: HealthSpeed
     itemPrefab: {fileID: 5460857258823703350, guid: 1f50e557c98285b40a08f259ea0313bf, type: 3}
-    dropRate: 0.01
+    dropRate: 90
   - name: MaxHealth
     itemPrefab: {fileID: 5154804475349536697, guid: ed1fec541d90346419437671e5946962, type: 3}
-    dropRate: 0.01
+    dropRate: 90
   - name: MoveSpeed
     itemPrefab: {fileID: 6268770821957932893, guid: 3e44ec3ffac123e438801c619bff4244, type: 3}
-    dropRate: 0.01
+    dropRate: 90
   - name: AttackSpeed
     itemPrefab: {fileID: 3585012511491404700, guid: 0f0cbb4c11a453849932ab4c768a63c8, type: 3}
-    dropRate: 0.01
+    dropRate: 90
   - name: Attack
     itemPrefab: {fileID: 5048663662105937639, guid: 38bb3f286445f1e4bab6b13e85db2e58, type: 3}
-    dropRate: 0.01
+    dropRate: 90
+  - name: PinkNut
+    itemPrefab: {fileID: 1057523299207354640, guid: 156475a2c67787d4aa3bf64c281b1c9f, type: 3}
+    dropRate: 75
 --- !u!114 &6638463957298466232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b8523420fe36c646b5a7b6c9f5fe2d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: fb5d40d20cb6ac54785143d8ca2c983a, type: 2}
+  enemyData: {fileID: 11400000, guid: 4500bab517c83d04ebbc7367068d54b6, type: 2}
   currentMoveSpeed: 0
   currentHealth: 0
   currentDamage: 0
@@ -259,13 +256,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5275338203857299795}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.026, y: -0.235, z: 0}
-  m_LocalScale: {x: 0.56, y: 1.21, z: 1}
+  m_LocalRotation: {x: -0.0467411, y: -0, z: -0, w: 0.998907}
+  m_LocalPosition: {x: 0.3181, y: -2.2081, z: -0.0312}
+  m_LocalScale: {x: 6.534281, y: 5.193773, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7586707388260485519}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -5.358, y: 0, z: 0}
 --- !u!212 &8574123014462796873
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -68,6 +68,8 @@ public class PlayerStats : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject levelDownScreen;
     public GameObject gameWinScreen;
+    public GameObject crownTakeScreen;
+    public GameObject crownNoTakeScreen;
     public Button levelDown1ActualButton;
     public Button levelDown2ActualButton;
     public Button levelDown3ActualButton;
@@ -111,6 +113,8 @@ public class PlayerStats : MonoBehaviour
         gameOverScreen.SetActive(false);
         levelDownScreen.SetActive(false);
         gameWinScreen.SetActive(false);
+        crownNoTakeScreen.SetActive(false);
+        crownTakeScreen.SetActive(false);
 
 
 
@@ -325,6 +329,24 @@ public class PlayerStats : MonoBehaviour
         PlayerController.isPaused = true;
         gameWinScreen.SetActive(true);
         //END THE GAME
+    }
+
+    public void CrownTake()
+    {
+        //if you have time to make an image, set it here
+        Time.timeScale = 0;
+        PlayerController.isPaused = true;
+        gameWinScreen.SetActive(false);
+        crownTakeScreen.SetActive(true);
+    }
+
+    public void CrownNoTake()
+    {
+        //if you have time to make an image, set it here
+        Time.timeScale = 0;
+        PlayerController.isPaused = true;
+        gameWinScreen.SetActive(false);
+        crownNoTakeScreen.SetActive(true);
     }
 
     public void RestoreHealth(float healthToRestore)
