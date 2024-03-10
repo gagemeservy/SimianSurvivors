@@ -183,17 +183,17 @@ MonoBehaviour:
   - itemPrefab: {fileID: 71473799619653679, guid: 3d5c4d9e3a86a6f499a616d4efcee2e3, type: 3}
     dropRate: 8
   - itemPrefab: {fileID: 6509846541490924993, guid: 0618eaea966979e43b355449d9dae702, type: 3}
-    dropRate: 0.015
+    dropRate: 0.2
   - itemPrefab: {fileID: 5460857258823703350, guid: 1f50e557c98285b40a08f259ea0313bf, type: 3}
-    dropRate: 0.0051
+    dropRate: 0.1
   - itemPrefab: {fileID: 5154804475349536697, guid: ed1fec541d90346419437671e5946962, type: 3}
-    dropRate: 0.0051
+    dropRate: 0.1
   - itemPrefab: {fileID: 3585012511491404700, guid: 0f0cbb4c11a453849932ab4c768a63c8, type: 3}
-    dropRate: 0.0051
+    dropRate: 0.1
   - itemPrefab: {fileID: 5048663662105937639, guid: 38bb3f286445f1e4bab6b13e85db2e58, type: 3}
-    dropRate: 0.0051
+    dropRate: 0.1
   - itemPrefab: {fileID: 6268770821957932893, guid: 3e44ec3ffac123e438801c619bff4244, type: 3}
-    dropRate: 0.0051
+    dropRate: 0.1
 --- !u!50 &-2756678565693166342
 Rigidbody2D:
   serializedVersion: 4
