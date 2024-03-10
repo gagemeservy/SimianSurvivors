@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BossSnow
   m_EditorClassIdentifier: 
   damage: 25
-  maxHealth: 5000
+  maxHealth: 4500
   moveSpeed: 0.7

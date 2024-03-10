@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BossDusky
   m_EditorClassIdentifier: 
   damage: 25
-  maxHealth: 2600
+  maxHealth: 2500
   moveSpeed: 1.2

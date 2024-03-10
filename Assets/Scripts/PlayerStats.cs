@@ -199,6 +199,9 @@ public class PlayerStats : MonoBehaviour
                 if(levelDownTimer <= 0)
                 {
                     LevelDownsLeft--;
+                    //Give them some leeway to get away from enemies after the menu closes
+                    invincibilityTimer = (invincibilityDuration * 2);
+                    isInvincible = true;
                     LevelDown();
                 }
                 else
