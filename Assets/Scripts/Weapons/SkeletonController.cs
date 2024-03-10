@@ -23,7 +23,11 @@ public class SkeletonController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        audioPlayer.PlaySFX(audioPlayer.skeleton);
+        if (GameObject.FindGameObjectWithTag("Audio") != null)
+        {
+            audioPlayer.PlaySFX(audioPlayer.skeleton);
+        }
+            
         for (int i = 0; i < currentNumberOfAttacksToDo; i++)
         {
             SpawnAndAttack(i);

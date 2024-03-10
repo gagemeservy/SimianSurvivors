@@ -30,7 +30,7 @@ public class DropRateManager : MonoBehaviour
             }
         }
 
-        if (possibleDrops.Count > 3)
+        /*if (possibleDrops.Count > 3)
         {
             Drops drops = possibleDrops[UnityEngine.Random.Range(3, possibleDrops.Count)];
             Instantiate(drops.itemPrefab, transform.position, Quaternion.identity);
@@ -45,7 +45,9 @@ public class DropRateManager : MonoBehaviour
             Drops drops = possibleDrops[UnityEngine.Random.Range(1, possibleDrops.Count)];
             Instantiate(drops.itemPrefab, transform.position, Quaternion.identity);
         }
-        else if (possibleDrops.Count > 0)
+        else*/
+        
+        if (possibleDrops.Count > 0)
         {
             Drops drops = possibleDrops[UnityEngine.Random.Range(0, possibleDrops.Count)];
             Instantiate(drops.itemPrefab, transform.position, Quaternion.identity);

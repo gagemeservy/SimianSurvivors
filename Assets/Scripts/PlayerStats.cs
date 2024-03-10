@@ -94,6 +94,8 @@ public class PlayerStats : MonoBehaviour
     float levelDownDuration = .1f;
     float levelDownTimer;
 
+    public Image healthBar;
+
     private void Awake()
     {
         if(GameObject.FindGameObjectWithTag("Audio") != null)
@@ -334,6 +336,7 @@ public class PlayerStats : MonoBehaviour
             FlashDamage();
 
             currentHealth -= damage;
+            SetHealthBar();
 
             invincibilityTimer = invincibilityDuration;
             isInvincible = true;
@@ -344,6 +347,11 @@ public class PlayerStats : MonoBehaviour
             }
         }
 
+    }
+
+    private void SetHealthBar()
+    {
+        healthBar.fillAmount = currentHealth / currentMaxHealth;
     }
 
     public void Kill()
@@ -408,7 +416,11 @@ public class PlayerStats : MonoBehaviour
             {
                 currentHealth = currentMaxHealth;
             }
+
+            SetHealthBar();
         }
+
+        
     }
 
     void Recover()
@@ -416,6 +428,7 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth < currentMaxHealth)
         {
             currentHealth += currentRecovery * Time.deltaTime;
+            SetHealthBar();
         }
     }
 
@@ -424,6 +437,8 @@ public class PlayerStats : MonoBehaviour
         Announce("Max Health Increased!");
             
         currentMaxHealth += healthToIncrease;
+        currentHealth += healthToIncrease;
+        SetHealthBar();
     }
 
     public void HealthSpeedIncrease(float speedToIncrease)

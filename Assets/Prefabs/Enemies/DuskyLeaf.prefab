@@ -160,27 +160,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: OrangeXPnut
-    itemPrefab: {fileID: 6260029731400315184, guid: f00b6fef0819e564e9612c67e8e809fd, type: 3}
+  - itemPrefab: {fileID: 6260029731400315184, guid: f00b6fef0819e564e9612c67e8e809fd, type: 3}
     dropRate: 20
-  - name: Health
-    itemPrefab: {fileID: 6509846541490924993, guid: 0618eaea966979e43b355449d9dae702, type: 3}
+  - itemPrefab: {fileID: 6509846541490924993, guid: 0618eaea966979e43b355449d9dae702, type: 3}
     dropRate: 3
-  - name: HealthSpeed
-    itemPrefab: {fileID: 5460857258823703350, guid: 1f50e557c98285b40a08f259ea0313bf, type: 3}
-    dropRate: 0.1
-  - name: MaxHealth
-    itemPrefab: {fileID: 5154804475349536697, guid: ed1fec541d90346419437671e5946962, type: 3}
+  - itemPrefab: {fileID: 5460857258823703350, guid: 1f50e557c98285b40a08f259ea0313bf, type: 3}
     dropRate: 0.3
-  - name: MoveSpeed
-    itemPrefab: {fileID: 6268770821957932893, guid: 3e44ec3ffac123e438801c619bff4244, type: 3}
+  - itemPrefab: {fileID: 5154804475349536697, guid: ed1fec541d90346419437671e5946962, type: 3}
     dropRate: 0.3
-  - name: AttackSpeed
-    itemPrefab: {fileID: 3585012511491404700, guid: 0f0cbb4c11a453849932ab4c768a63c8, type: 3}
+  - itemPrefab: {fileID: 6268770821957932893, guid: 3e44ec3ffac123e438801c619bff4244, type: 3}
     dropRate: 0.3
-  - name: Attack
-    itemPrefab: {fileID: 5048663662105937639, guid: 38bb3f286445f1e4bab6b13e85db2e58, type: 3}
+  - itemPrefab: {fileID: 3585012511491404700, guid: 0f0cbb4c11a453849932ab4c768a63c8, type: 3}
     dropRate: 0.3
+  - itemPrefab: {fileID: 5048663662105937639, guid: 38bb3f286445f1e4bab6b13e85db2e58, type: 3}
+    dropRate: 0.3
+  - itemPrefab: {fileID: 1057523299207354640, guid: 156475a2c67787d4aa3bf64c281b1c9f, type: 3}
+    dropRate: 0.05
 --- !u!114 &6638463957298466232
 MonoBehaviour:
   m_ObjectHideFlags: 0

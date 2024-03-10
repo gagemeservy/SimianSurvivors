@@ -171,13 +171,13 @@ MonoBehaviour:
   - itemPrefab: {fileID: 5154804475349536697, guid: ed1fec541d90346419437671e5946962, type: 3}
     dropRate: 0.1
   - itemPrefab: {fileID: 6268770821957932893, guid: 3e44ec3ffac123e438801c619bff4244, type: 3}
-    dropRate: 0.1
+    dropRate: 0.05
   - itemPrefab: {fileID: 3585012511491404700, guid: 0f0cbb4c11a453849932ab4c768a63c8, type: 3}
-    dropRate: 0.1
+    dropRate: 0.05
   - itemPrefab: {fileID: 5048663662105937639, guid: 38bb3f286445f1e4bab6b13e85db2e58, type: 3}
-    dropRate: 0.1
+    dropRate: 0.05
   - itemPrefab: {fileID: 1057523299207354640, guid: 156475a2c67787d4aa3bf64c281b1c9f, type: 3}
-    dropRate: 0.1
+    dropRate: 0.2
 --- !u!114 &6638463957298466232
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,8 +23,10 @@ public class VineController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-
-        audioPlayer.PlaySFX(audioPlayer.vine);
+        if (GameObject.FindGameObjectWithTag("Audio") != null)
+        {
+            audioPlayer.PlaySFX(audioPlayer.vine);
+        }
         for (int i = 0; i < currentNumberOfAttacksToDo; i++)
         {
             SpawnAndAttack(i);

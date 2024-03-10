@@ -29,7 +29,10 @@ public class QuicksandController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        audioPlayer.PlaySFX(audioPlayer.quicksand);
+        if (GameObject.FindGameObjectWithTag("Audio") != null)
+        {
+            audioPlayer.PlaySFX(audioPlayer.quicksand);
+        }
         for (int i = 0; i < currentNumberOfAttacksToDo; i++)
         {
             SpawnAndAttack(i);

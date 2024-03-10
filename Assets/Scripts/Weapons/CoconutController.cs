@@ -40,7 +40,10 @@ public class CoconutController : WeaponController
     protected override void Attack()
     {
         base.Attack();
-        audioPlayer.PlaySFX(audioPlayer.coconut);
+        if (GameObject.FindGameObjectWithTag("Audio") != null)
+        {
+            audioPlayer.PlaySFX(audioPlayer.coconut);
+        }
         for (int i = 0; i < currentNumberOfAttacksToDo; i++)
         {
             SpawnAndAttack(i);
