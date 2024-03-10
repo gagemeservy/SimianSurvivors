@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BossHowler
   m_EditorClassIdentifier: 
   damage: 30
-  maxHealth: 1200
+  maxHealth: 2200
   moveSpeed: 2

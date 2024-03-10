@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SnowMonkey
   m_EditorClassIdentifier: 
   damage: 15
-  maxHealth: 20
+  maxHealth: 280
   moveSpeed: 0.45

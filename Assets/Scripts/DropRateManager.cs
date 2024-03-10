@@ -7,7 +7,7 @@ public class DropRateManager : MonoBehaviour
     [System.Serializable]
     public class Drops
     {
-        public string name;
+        //public string name;
         public GameObject itemPrefab;
         public float dropRate;
     }

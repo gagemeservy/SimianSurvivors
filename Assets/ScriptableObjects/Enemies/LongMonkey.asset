@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LongMonkey
   m_EditorClassIdentifier: 
   damage: 5
-  maxHealth: 1200
+  maxHealth: 3000
   moveSpeed: 0.2

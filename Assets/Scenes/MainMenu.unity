@@ -383,7 +383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7415113926930156792, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
       propertyPath: m_Volume
-      value: 0.6
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 7415113926930156792, guid: 316c583659b87a34ba8642d873efc9ea, type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
@@ -2711,131 +2711,101 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - waveName: Wave1
-    enemyGroups:
-    - enemyName: SnubNose
-      enemyCount: 50
+  - enemyGroups:
+    - enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: 864b8f53585de1a45b3e391b764c57bb, type: 3}
     waveQuota: 0
     spawnInterval: 0.01
     SpawnCount: 0
-  - waveName: Wave2
-    enemyGroups:
-    - enemyName: Tamarin
-      enemyCount: 50
+  - enemyGroups:
+    - enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 2446863675268381581, guid: da88ab7a9f7bc554cac79de7ee0667b8, type: 3}
-    - enemyName: Snub Nose
-      enemyCount: 10
+    - enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: 864b8f53585de1a45b3e391b764c57bb, type: 3}
     waveQuota: 0
     spawnInterval: 0.01
     SpawnCount: 0
-  - waveName: Wave3
-    enemyGroups:
-    - enemyName: Tamarin
-      enemyCount: 5
+  - enemyGroups:
+    - enemyCount: 5
       spawnCount: 0
       enemyPrefab: {fileID: 2446863675268381581, guid: da88ab7a9f7bc554cac79de7ee0667b8, type: 3}
-    - enemyName: Snow
-      enemyCount: 50
+    - enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: 6b7aedd70b4b45745a646226662c9d9d, type: 3}
     waveQuota: 0
     spawnInterval: 0.01
     SpawnCount: 0
-  - waveName: Wave4
-    enemyGroups:
-    - enemyName: Tamarin
-      enemyCount: 0
+  - enemyGroups:
+    - enemyCount: 0
       spawnCount: 0
       enemyPrefab: {fileID: 2446863675268381581, guid: da88ab7a9f7bc554cac79de7ee0667b8, type: 3}
-    - enemyName: Snow
-      enemyCount: 20
+    - enemyCount: 20
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: 6b7aedd70b4b45745a646226662c9d9d, type: 3}
-    - enemyName: Capuchin
-      enemyCount: 100
+    - enemyCount: 100
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: fd00807229612de41abfbc2ee31865ce, type: 3}
     waveQuota: 0
     spawnInterval: 0.01
     SpawnCount: 0
-  - waveName: Wave5
-    enemyGroups:
-    - enemyName: Capuchin
-      enemyCount: 20
+  - enemyGroups:
+    - enemyCount: 20
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: fd00807229612de41abfbc2ee31865ce, type: 3}
-    - enemyName: GoldCapuchin
-      enemyCount: 2
+    - enemyCount: 2
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: 37390219a39c74647a32e98776ce831d, type: 3}
     waveQuota: 0
     spawnInterval: 0.01
     SpawnCount: 0
-  - waveName: Wave6
-    enemyGroups:
-    - enemyName: DuskyLeaf
-      enemyCount: 50
+  - enemyGroups:
+    - enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: ba2dbfd97b5944346b550785d010f1ad, type: 3}
-    - enemyName: GoldCapuchin
-      enemyCount: 1
+    - enemyCount: 1
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: 37390219a39c74647a32e98776ce831d, type: 3}
     waveQuota: 0
     spawnInterval: 0.01
     SpawnCount: 0
-  - waveName: Wave7
-    enemyGroups:
-    - enemyName: DuskyLeaf
-      enemyCount: 10
+  - enemyGroups:
+    - enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: ba2dbfd97b5944346b550785d010f1ad, type: 3}
-    - enemyName: Howler
-      enemyCount: 50
+    - enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: 2966ad8073f0f4c429f6138c0b1a9c6c, type: 3}
     waveQuota: 0
     spawnInterval: 0.01
     SpawnCount: 0
-  - waveName: Wave8
-    enemyGroups:
-    - enemyName: BrownBaboon
-      enemyCount: 50
+  - enemyGroups:
+    - enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: a631ac6f10346e34db2d19ea84ca4357, type: 3}
     waveQuota: 0
     spawnInterval: 0.01
     SpawnCount: 0
-  - waveName: Wave9
-    enemyGroups:
-    - enemyName: BrownBaboon
-      enemyCount: 20
+  - enemyGroups:
+    - enemyCount: 20
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: a631ac6f10346e34db2d19ea84ca4357, type: 3}
-    - enemyName: BabyBaboon
-      enemyCount: 50
+    - enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: 41e29e3c3e8ae194f851e8ac663a07e4, type: 3}
     waveQuota: 0
     spawnInterval: 0.01
     SpawnCount: 0
-  - waveName: Wave9
-    enemyGroups:
-    - enemyName: BrownBaboon
-      enemyCount: 10
+  - enemyGroups:
+    - enemyCount: 10
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: a631ac6f10346e34db2d19ea84ca4357, type: 3}
-    - enemyName: BabyBaboon
-      enemyCount: 50
+    - enemyCount: 50
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: 41e29e3c3e8ae194f851e8ac663a07e4, type: 3}
-    - enemyName: BossBaboon
-      enemyCount: 2
+    - enemyCount: 2
       spawnCount: 0
       enemyPrefab: {fileID: 1457612397259887747, guid: 79e6a111229971e4da1202d25c688a53, type: 3}
     waveQuota: 0
@@ -2845,7 +2815,7 @@ MonoBehaviour:
   enemiesAlive: 0
   maxEnemiesAllowed: 500
   maxEnemiesReach: 0
-  waveInterval: 30
+  waveInterval: 20
   relativeSpawnPoints:
   - {fileID: 1564190390}
   - {fileID: 1505840774}
