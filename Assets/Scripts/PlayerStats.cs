@@ -6,6 +6,7 @@ using System.Reflection;
 using TMPro;
 using Unity.Burst.Intrinsics;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.U2D;
 using UnityEngine.UI;
 
@@ -70,6 +71,13 @@ public class PlayerStats : MonoBehaviour
     public GameObject gameWinScreen;
     public GameObject crownTakeScreen;
     public GameObject crownNoTakeScreen;
+    public GameObject gameOverScreenFirstButton;
+    public GameObject gameWinScreenFirstButton;
+    public GameObject crownTakeScreenFirstButton;
+    public GameObject crownNoTakeScreenFirstButton;
+    public GameObject levelDownScreenFirstButton;
+    public GameObject levelDownScreenSecondButton;
+    public GameObject levelDownScreenThirdButton;
     public Button levelDown1ActualButton;
     public Button levelDown2ActualButton;
     public Button levelDown3ActualButton;
@@ -201,6 +209,18 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void DeactivateEventSystem()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.sendNavigationEvents = false;
+    }
+
+    public void ActivateEventSystem(GameObject buttonToSet)
+    {
+        EventSystem.current.SetSelectedGameObject(buttonToSet);
+        EventSystem.current.sendNavigationEvents = true;
+    }
+
     public void IncreaseExperience(int amount)
     {
         experience += amount;
@@ -235,45 +255,63 @@ public class PlayerStats : MonoBehaviour
         levelDownTimer = levelDownDuration;
 
         //BEFORE SETTING SCREEN ACTIVE. CHANGE ON THE LABELS ON THE BUTTONS.
-        if (inventory.weaponSlots[0].weaponData.Level != 1)
+        if (inventory.weaponSlots[2].weaponData.Level != 1)
         {
-            levelDown1Button.SetText(inventory.weaponSlots[0].weaponData.Title + " Lv. " + (inventory.weaponSlots[0].weaponData.Level - 1) + " :\n" + inventory.weaponSlots[0].weaponData.Description);
-            levelDown1Image.sprite = inventory.weaponSlots[0].weaponData.Icon;
+            levelDown3Button.SetText(inventory.weaponSlots[2].weaponData.Title + " Lv. " + (inventory.weaponSlots[2].weaponData.Level - 1) + " :\n" + inventory.weaponSlots[2].weaponData.Description);
+            levelDown3Image.sprite = inventory.weaponSlots[2].weaponData.Icon;
+            DeactivateEventSystem();
+            ActivateEventSystem(levelDownScreenThirdButton);
         }
         else
         {
-            levelDown1Button.SetText(inventory.weaponSlots[0].weaponData.Description);
-            levelDown1ActualButton.enabled = false;
-            //levelDown1Button.SetText(inventory.weaponSlots[0].weaponData.Description.ToString());
-            //levelDown1Image.sprite = inventory.weaponSlots[0].weaponData.Icon;
+            levelDown3Button.SetText(inventory.weaponSlots[2].weaponData.Description);
+            levelDown3ActualButton.enabled = false;
+            //levelDown3ActualButton.colors.highlightedColor = Color.black;
+            //levelDown3Button.color = Color.black;
+
         }
 
         if (inventory.weaponSlots[1].weaponData.Level != 1)
         {
             levelDown2Button.SetText(inventory.weaponSlots[1].weaponData.Title + " Lv. " + (inventory.weaponSlots[1].weaponData.Level - 1) + " :\n" + inventory.weaponSlots[1].weaponData.Description);
             levelDown2Image.sprite = inventory.weaponSlots[1].weaponData.Icon;
+            DeactivateEventSystem();
+            ActivateEventSystem(levelDownScreenSecondButton);
         }
         else
         {
             levelDown2Button.SetText(inventory.weaponSlots[1].weaponData.Description);
             levelDown2ActualButton.enabled = false;
-
+            //levelDown2Button.color = Color.black;
         }
 
-        if (inventory.weaponSlots[2].weaponData.Level != 1)
+        if (inventory.weaponSlots[0].weaponData.Level != 1)
         {
-            levelDown3Button.SetText(inventory.weaponSlots[2].weaponData.Title + " Lv. " + (inventory.weaponSlots[2].weaponData.Level - 1) + " :\n" + inventory.weaponSlots[2].weaponData.Description);
-            levelDown3Image.sprite = inventory.weaponSlots[2].weaponData.Icon;
+            levelDown1Button.SetText(inventory.weaponSlots[0].weaponData.Title + " Lv. " + (inventory.weaponSlots[0].weaponData.Level - 1) + " :\n" + inventory.weaponSlots[0].weaponData.Description);
+            levelDown1Image.sprite = inventory.weaponSlots[0].weaponData.Icon;
+            DeactivateEventSystem();
+            ActivateEventSystem(levelDownScreenFirstButton);
         }
         else
         {
-            levelDown3Button.SetText(inventory.weaponSlots[2].weaponData.Description);
-            levelDown3ActualButton.enabled = false;
-
+            levelDown1Button.SetText(inventory.weaponSlots[0].weaponData.Description);
+            levelDown1ActualButton.enabled = false;
+            //levelDown1Button.color = new Color(142, 42, 42, 255);
+            //levelDown1ActualButton.colors.Set(Color.clear);
+            /*if(inventory.weaponSlots[1].weaponData.Level != 1)
+            {
+                ActivateEventSystem(levelDownScreenSecondButton);
+            }
+            else if(inventory.weaponSlots[2].weaponData.Level != 1)
+            {
+                ActivateEventSystem(levelDownScreenThirdButton);
+            }*/
         }
 
 
-        
+
+
+
         if (inventory.weaponSlots[2].weaponData.Level == 1 && inventory.weaponSlots[1].weaponData.Level == 1 & inventory.weaponSlots[0].weaponData.Level == 1)
         {
             return;
@@ -311,10 +349,11 @@ public class PlayerStats : MonoBehaviour
         //Bring up end game screen
         //Announce("YOU DIED");
         sprite.color = Color.black;
-
+        DeactivateEventSystem();
         Time.timeScale = 0;
         PlayerController.isPaused = true;
         gameOverScreen.SetActive(true);
+        ActivateEventSystem(gameOverScreenFirstButton);
         //PlayerController.Pause(gameOverScreen);
 
         //Destroy(gameObject);
@@ -324,29 +363,34 @@ public class PlayerStats : MonoBehaviour
     public void Win()
     {
         sprite.color = Color.white;
-
+        DeactivateEventSystem();
         Time.timeScale = 0;
         PlayerController.isPaused = true;
         gameWinScreen.SetActive(true);
+        ActivateEventSystem(gameWinScreenFirstButton);
         //END THE GAME
     }
 
     public void CrownTake()
     {
         //if you have time to make an image, set it here
+        DeactivateEventSystem();
         Time.timeScale = 0;
         PlayerController.isPaused = true;
         gameWinScreen.SetActive(false);
         crownTakeScreen.SetActive(true);
+        ActivateEventSystem(crownTakeScreenFirstButton);
     }
 
     public void CrownNoTake()
     {
         //if you have time to make an image, set it here
+        DeactivateEventSystem();
         Time.timeScale = 0;
         PlayerController.isPaused = true;
         gameWinScreen.SetActive(false);
         crownNoTakeScreen.SetActive(true);
+        ActivateEventSystem(crownNoTakeScreenFirstButton);
     }
 
     public void RestoreHealth(float healthToRestore)

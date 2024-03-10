@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     PlayerStats player;
     public static bool isPaused = false;
     public GameObject pauseScreen;
+    public GameObject pauseScreenFirstButton;
 
     private void Awake()
     {
@@ -71,7 +72,9 @@ public class PlayerController : MonoBehaviour
 
         if (!isPaused)
         {
+            player.DeactivateEventSystem();
             Pause(pauseScreen);
+            player.ActivateEventSystem(pauseScreenFirstButton);
         }
         else
         {
@@ -95,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     public void Resume()
     {
-        ButtonPressSound();
+        //ButtonPressSound();
         unPause(pauseScreen);
     }
 
@@ -106,7 +109,7 @@ public class PlayerController : MonoBehaviour
 
     public void Restart()
     {
-        ButtonPressSound();
+        //ButtonPressSound();
         unPause(pauseScreen);
         //Scene scene = SceneManager.GetActiveScene();
         //SceneManager.LoadScene(scene.name);

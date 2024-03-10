@@ -9,7 +9,6 @@ public class MainMenuManager : MonoBehaviour
     public static bool isPaused = false;
     public GameObject MainMenuScreen;
     public GameObject InstructionScreen;
-    public EventSystem eventSystem;
     public GameObject InstructionsFirstButton;
     public GameObject MainMenuFirstButton;
 
@@ -21,7 +20,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void PressStart()
     {
-        ButtonPressSound();
+        //ButtonPressSound();
         StartCoroutine(LoadAsyncScene("MainLevel"));
     }
 
@@ -32,7 +31,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void Quit()
     {
-        ButtonPressSound();
+        //ButtonPressSound();
         Application.Quit();
     }
 
