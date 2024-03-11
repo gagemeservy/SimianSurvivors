@@ -3366,6 +3366,7 @@ MonoBehaviour:
   levelDown2Image: {fileID: 0}
   levelDown3Image: {fileID: 0}
   LevelDownsLeft: 0
+  healthBar: {fileID: 0}
 --- !u!114 &819140689
 MonoBehaviour:
   m_ObjectHideFlags: 0

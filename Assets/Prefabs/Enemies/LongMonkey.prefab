@@ -170,8 +170,6 @@ MonoBehaviour:
     dropRate: 100
   - itemPrefab: {fileID: 5048663662105937639, guid: 38bb3f286445f1e4bab6b13e85db2e58, type: 3}
     dropRate: 100
-  - itemPrefab: {fileID: 1057523299207354640, guid: 156475a2c67787d4aa3bf64c281b1c9f, type: 3}
-    dropRate: 100
 --- !u!114 &6638463957298466232
 MonoBehaviour:
   m_ObjectHideFlags: 0
