@@ -46,7 +46,18 @@ public class PlayerController : MonoBehaviour
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
 
+            
+
             moveDirection = new Vector2(moveX, moveY).normalized;
+
+            //if (Input.GetMouseButtonDown(0))
+            //if(Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse Y") > 0)
+            //{
+             //   float mouseXValue = Input.GetAxisRaw("Mouse X");
+              //  float mouseYValue = Input.GetAxisRaw("Mouse Y");
+                //moveDirection = Input.mousePosition.normalized;
+              //  moveDirection = new Vector2(mouseXValue, mouseYValue);
+            //}
         }
 
         //if(Input.GetKeyDown(KeyCode.Escape))
