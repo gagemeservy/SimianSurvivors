@@ -29,7 +29,7 @@ public class AudioManager : MonoBehaviour
 
         if (audioPlayer.Length > 1)
         {
-            Destroy(audioPlayer[1]);
+            Destroy(audioPlayer[0]);
         }
 
         musicSource.clip = Music;
