@@ -139,6 +139,12 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(LoadAsyncScene("MainMenu"));
     }
 
+    public void KeepPlaying()
+    {
+        unPause(player.crownNoTakeScreen);
+        unPause(player.crownTakeScreen);
+    }
+
     IEnumerator LoadAsyncScene(String sceneToSwitchTo)
     {
         // The Application loads the Scene in the background as the current Scene runs.

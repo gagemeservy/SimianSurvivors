@@ -161,9 +161,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drops:
   - itemPrefab: {fileID: 6260029731400315184, guid: f00b6fef0819e564e9612c67e8e809fd, type: 3}
-    dropRate: 20
+    dropRate: 50
   - itemPrefab: {fileID: 4188998568056715057, guid: 0b7a5259cfc16ea43848530f8dfb4a77, type: 3}
-    dropRate: 1
+    dropRate: 10
   - itemPrefab: {fileID: 6509846541490924993, guid: 0618eaea966979e43b355449d9dae702, type: 3}
     dropRate: 0.2
   - itemPrefab: {fileID: 5460857258823703350, guid: 1f50e557c98285b40a08f259ea0313bf, type: 3}
@@ -177,7 +177,7 @@ MonoBehaviour:
   - itemPrefab: {fileID: 5048663662105937639, guid: 38bb3f286445f1e4bab6b13e85db2e58, type: 3}
     dropRate: 0.1
   - itemPrefab: {fileID: 1057523299207354640, guid: 156475a2c67787d4aa3bf64c281b1c9f, type: 3}
-    dropRate: 0.5
+    dropRate: 5
 --- !u!114 &6638463957298466232
 MonoBehaviour:
   m_ObjectHideFlags: 0
