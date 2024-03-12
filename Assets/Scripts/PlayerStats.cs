@@ -54,13 +54,6 @@ public class PlayerStats : MonoBehaviour
     private Color originalColor;
     private SpriteRenderer sprite;
 
-
-    /*[Header("InventoryWeaponsForPowerups")]
-    public WeaponController weaponController1;
-    public WeaponController weaponController2;
-    public WeaponController weaponController3;
-    public WeaponController weaponController4;*/
-
     InventoryManager inventory;
     public int weaponIndex;
 
@@ -96,6 +89,8 @@ public class PlayerStats : MonoBehaviour
 
     public Image healthBar;
 
+    Vector3 announceTextOriginalPosition;
+
     private void Awake()
     {
         if(GameObject.FindGameObjectWithTag("Audio") != null)
@@ -125,11 +120,21 @@ public class PlayerStats : MonoBehaviour
         gameWinScreen.SetActive(false);
         crownNoTakeScreen.SetActive(false);
         crownTakeScreen.SetActive(false);
+        announceTextOriginalPosition = playerAnnouncements.transform.position;
 
 
 
         //This function can be replicated with other numbers, of course it could be dynamic and I could pass in a number but I don't wanna waste time.
         Spawn3RandomWeapons();
+    }
+
+    private void Start()
+    {
+        Announce("Enemies drop XPnuts.\nLevel down ALL of your weapons with XPnuts to fight the SUPREME SIMIAN!\nFind powerups as you explore.");
+        announceTimer = 8;
+        Vector3 newPosition = announceTextOriginalPosition;
+        newPosition.y += 100;
+        playerAnnouncements.transform.position = newPosition;
     }
 
     private void Spawn3RandomWeapons()
@@ -152,7 +157,6 @@ public class PlayerStats : MonoBehaviour
 
                 if (possibleWeapons.Count > 0)
                 {//3
-                    //Debug.Log("spawning third weapon");
                     randomSlot = UnityEngine.Random.Range(0, possibleWeapons.Count);
 
                     SpawnWeapon(possibleWeapons[randomSlot]);
@@ -183,6 +187,8 @@ public class PlayerStats : MonoBehaviour
             else
             {
                 announcementBubble.SetActive(false);
+                playerAnnouncements.transform.position = announceTextOriginalPosition;
+
             }
 
             if (flashTimer > 0)
