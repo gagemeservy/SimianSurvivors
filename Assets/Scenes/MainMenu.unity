@@ -1597,7 +1597,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65.00001, y: -25}
+  m_AnchoredPosition: {x: -56, y: -25}
   m_SizeDelta: {x: 427.7259, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &407529096
@@ -1973,11 +1973,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Welcome to SIMIAN SURVIVORS.
-
-    This game is like Vampire Survivors
-    except every time you level up your weapons get worse. Once your weapons are
-    fully downgraded the SUPREME SIMIAN will spawn. Beat him to win.'
+  m_text: "Welcome to SIMIAN SURVIVORS.\nThis game is like Vampire Survivors except
+    every time you level up your weapons get worse. Once your weapons are fully downgraded
+    the SUPREME SIMIAN will spawn. \nConquer him to win."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70f392a9801922e479904e30195dbaf5, type: 2}
   m_sharedMaterial: {fileID: -6033082874712232077, guid: 70f392a9801922e479904e30195dbaf5, type: 2}
@@ -3958,7 +3956,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65.00001, y: -25}
+  m_AnchoredPosition: {x: -56, y: -25}
   m_SizeDelta: {x: 427.7259, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &963001313

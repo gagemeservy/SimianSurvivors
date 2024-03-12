@@ -116,8 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: PinkXPnut
-    itemPrefab: {fileID: 1057523299207354640, guid: 156475a2c67787d4aa3bf64c281b1c9f, type: 3}
+  - itemPrefab: {fileID: 1057523299207354640, guid: 156475a2c67787d4aa3bf64c281b1c9f, type: 3}
     dropRate: 100
 --- !u!114 &6638463957298466232
 MonoBehaviour:
