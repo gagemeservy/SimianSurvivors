@@ -25,6 +25,9 @@ public class UIController : MonoBehaviour
 
     float displayAttackSpeed;
 
+    float moveSpeedDisplayReduction;
+    float recoveryDisplayAddition = .9f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,11 +43,14 @@ public class UIController : MonoBehaviour
 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
+        moveSpeedDisplayReduction = player.currentMoveSpeed - 1;
+        //recoveryDisplayAddition = 1 - player.currentMoveSpeed;
+
         this.healthText.SetText("Health: " + (int)player.currentHealth + "/" + (int)player.currentMaxHealth);
 
-        this.movespeedText.SetText("Move Speed: " + player.currentMoveSpeed);
+        this.movespeedText.SetText("Move Speed: " + (player.currentMoveSpeed - moveSpeedDisplayReduction));
 
-        this.recoveryspeedText.SetText("Recovery Speed: " + player.currentRecovery);
+        this.recoveryspeedText.SetText("Recovery Speed: " + (player.currentRecovery + recoveryDisplayAddition));
 
         this.attackDamageText.SetText("Attack Multiplier: " + player.currentAttackDamage);
 
@@ -68,9 +74,9 @@ public class UIController : MonoBehaviour
 
         this.healthText.SetText("Health: " + (int)player.currentHealth + "/" + (int)player.currentMaxHealth);
 
-        this.movespeedText.SetText("Move Speed: " + player.currentMoveSpeed);
+        this.movespeedText.SetText("Move Speed: " + (player.currentMoveSpeed - moveSpeedDisplayReduction));
 
-        this.recoveryspeedText.SetText("Recovery Speed: " + player.currentRecovery);
+        this.recoveryspeedText.SetText("Recovery Speed: " + (player.currentRecovery + recoveryDisplayAddition));
 
         this.attackDamageText.SetText("Attack Multiplier: " + player.currentAttackDamage);
 

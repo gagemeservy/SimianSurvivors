@@ -88,6 +88,7 @@ public class PlayerStats : MonoBehaviour
     float levelDownTimer;
 
     public Image healthBar;
+    public Image XPBar;
 
     Vector3 announceTextOriginalPosition;
 
@@ -126,6 +127,8 @@ public class PlayerStats : MonoBehaviour
 
         //This function can be replicated with other numbers, of course it could be dynamic and I could pass in a number but I don't wanna waste time.
         Spawn3RandomWeapons();
+
+        SetXPBar();
     }
 
     private void Start()
@@ -234,6 +237,7 @@ public class PlayerStats : MonoBehaviour
 
     public void IncreaseExperience(int amount)
     {
+        SetXPBar();
         experience += amount;
 
         LevelUpChecker();
@@ -243,6 +247,7 @@ public class PlayerStats : MonoBehaviour
     {
         while (experience >= experienceCap)
         {
+            
             //CALL THE FUNCTION TO LET THEM SELECT AN ITEM TO LEVEL DOWN
             level++;
             experience -= experienceCap;
@@ -251,7 +256,9 @@ public class PlayerStats : MonoBehaviour
             //LevelDown();
             //MAYBE CALL THIS FUNCTION AFTER AND PASS IT THE NUMBER OF LEVEL UPS OR SOMETHING
             LevelDownsLeft++;
+            SetXPBar();
         }
+
     }
 
     void LevelDown()
@@ -358,6 +365,11 @@ public class PlayerStats : MonoBehaviour
     private void SetHealthBar()
     {
         healthBar.fillAmount = currentHealth / currentMaxHealth;
+    }
+
+    private void SetXPBar()
+    {
+        XPBar.fillAmount = experience / experienceCap;
     }
 
     public void Kill()
