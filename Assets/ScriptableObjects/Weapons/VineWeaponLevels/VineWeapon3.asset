@@ -19,7 +19,7 @@ MonoBehaviour:
   freezeDuration: 5
   pierce: 32
   numberOfAttacksToDo: 3
-  cooldownDuration: 3
+  cooldownDuration: 2.88
   currentForce: 1
   level: 3
   nextLevelPrefab: {fileID: 7785816997681255911, guid: 1c7611818b5b2c444a2440f7c99b8301, type: 3}
