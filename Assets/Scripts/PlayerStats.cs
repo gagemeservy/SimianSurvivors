@@ -88,6 +88,7 @@ public class PlayerStats : MonoBehaviour
     float levelDownTimer;
 
     public Image healthBar;
+    public Image healthBar2;
     public Image XPBar;
 
     Vector3 announceTextOriginalPosition;
@@ -365,6 +366,7 @@ public class PlayerStats : MonoBehaviour
     private void SetHealthBar()
     {
         healthBar.fillAmount = currentHealth / currentMaxHealth;
+        healthBar2.fillAmount = currentHealth / currentMaxHealth;
     }
 
     private void SetXPBar()

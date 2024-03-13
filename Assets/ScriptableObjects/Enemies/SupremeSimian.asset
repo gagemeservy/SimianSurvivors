@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SupremeSimian
   m_EditorClassIdentifier: 
   damage: 50
-  maxHealth: 10000
+  maxHealth: 11000
   moveSpeed: 0.5
