@@ -1974,8 +1974,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Welcome to SIMIAN SURVIVORS.\nThis game is like Vampire Survivors except
-    every time you level up your weapons get worse. Once your weapons are fully downgraded
-    the SUPREME SIMIAN will spawn. \nConquer him to win."
+    every time you level up, your weapons get worse. Once your weapons are fully
+    downgraded the SUPREME SIMIAN will spawn. \nConquer him to win."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 70f392a9801922e479904e30195dbaf5, type: 2}
   m_sharedMaterial: {fileID: -6033082874712232077, guid: 70f392a9801922e479904e30195dbaf5, type: 2}
@@ -3500,6 +3500,8 @@ MonoBehaviour:
   levelDown3Image: {fileID: 0}
   LevelDownsLeft: 0
   healthBar: {fileID: 0}
+  healthBar2: {fileID: 0}
+  XPBar: {fileID: 0}
 --- !u!114 &819140689
 MonoBehaviour:
   m_ObjectHideFlags: 0
