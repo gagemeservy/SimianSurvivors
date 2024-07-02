@@ -19,7 +19,11 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        pauseScreen.SetActive(false);
+        if (pauseScreen)
+        {
+            pauseScreen.SetActive(false);
+        }
+        
     }
 
     private void Start()
