@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public static bool isPaused = false;
     public GameObject pauseScreen;
     public GameObject pauseScreenFirstButton;
-    [SerializeField] private FixedJoystick joystick;
+    [SerializeField] private FloatingJoystick joystick;
 
     private void Awake()
     {
