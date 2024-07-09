@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     public static bool isPaused = false;
     public GameObject pauseScreen;
     public GameObject pauseScreenFirstButton;
-    [SerializeField] private FixedJoystick joystick;
 
     private void Awake()
     {
@@ -51,11 +50,6 @@ public class PlayerController : MonoBehaviour
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
 
-            if(moveX == 0 && moveY == 0)
-            {
-                moveX = joystick.Horizontal;
-                moveY = joystick.Vertical;
-            }
             
 
             moveDirection = new Vector2(moveX, moveY).normalized;
