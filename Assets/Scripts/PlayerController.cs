@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
 
             if(moveX == 0 && moveY == 0)
             {
-                Debug.Log("Current joystick diesction is" + joystick.Horizontal + ", " + joystick.Vertical);
+                //Debug.Log("Current joystick diesction is" + joystick.Horizontal + ", " + joystick.Vertical);
                 moveX = joystick.Horizontal;
                 moveY = joystick.Vertical;
             }
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         //Debug.Log("Current move speed is " + player.currentMoveSpeed);
-        Debug.Log("Current move diesction is " + moveDirection.x + ", " + moveDirection.y);
+        //Debug.Log("Current move diesction is " + moveDirection.x + ", " + moveDirection.y);
         rb.velocity = new Vector2(moveDirection.x * player.currentMoveSpeed, moveDirection.y * player.currentMoveSpeed);
     }
 
