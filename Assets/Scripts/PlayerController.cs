@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,7 +26,13 @@ public class PlayerController : MonoBehaviour
         {
             pauseScreen.SetActive(false);
         }
-        
+
+        //This is to activate the joystick once because for some reason it doesn't show up the first time the user clicks unless we do this.
+        /*EventSystem eventSystem = gameObject.AddComponent<EventSystem>();
+        PointerEventData pointerEventData = new PointerEventData(null);
+        joystick.OnPointerDown(pointerEventData);*/
+        //joystick.background.gameObject.SetActive(true);
+
     }
 
     private void Start()
@@ -53,27 +61,14 @@ public class PlayerController : MonoBehaviour
 
             if(moveX == 0 && moveY == 0)
             {
+                Debug.Log("Current joystick diesction is" + joystick.Horizontal + ", " + joystick.Vertical);
                 moveX = joystick.Horizontal;
                 moveY = joystick.Vertical;
             }
             
 
             moveDirection = new Vector2(moveX, moveY).normalized;
-
-            //if (Input.GetMouseButtonDown(0))
-            //if(Input.GetAxis("Mouse X") > 0 || Input.GetAxis("Mouse Y") > 0)
-            //{
-             //   float mouseXValue = Input.GetAxisRaw("Mouse X");
-              //  float mouseYValue = Input.GetAxisRaw("Mouse Y");
-                //moveDirection = Input.mousePosition.normalized;
-              //  moveDirection = new Vector2(mouseXValue, mouseYValue);
-            //}
         }
-
-        //if(Input.GetKeyDown(KeyCode.Escape))
-        //{
-        //    PauseButton();
-        //}
 
         if (Input.GetButtonDown("Cancel"))
         {
@@ -84,6 +79,7 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         //Debug.Log("Current move speed is " + player.currentMoveSpeed);
+        Debug.Log("Current move diesction is " + moveDirection.x + ", " + moveDirection.y);
         rb.velocity = new Vector2(moveDirection.x * player.currentMoveSpeed, moveDirection.y * player.currentMoveSpeed);
     }
 
